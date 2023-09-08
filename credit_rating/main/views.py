@@ -62,12 +62,12 @@ class RatingView(View):
         self.context['key_words'] = None
         return render(request, 'main/index.html', context=self.context)
 
+    @method_decorator(login_required)
     def post(self, request):
         form_text = RatingForm(request.POST, request.FILES)
         if form_text.is_valid():
             object = form_text.save(commit=False)
-            if request.user.is_authenticated:
-                object.user = request.user
+            object.user = request.user
             object.save()
             object = InputFile.objects.filter(user=request.user).latest('id')
             match object.file.path[-4:]:
@@ -76,20 +76,25 @@ class RatingView(View):
                 case 'xlsx':
                     list_address = read_excel(object.file.path)
             if len(list_address) == 1:
-                ans_det, ans_sim, key_words = predict_rating(object.text)
-                object.answer_detalized = ans_det
-                object.answer_simplified = ans_sim
-                object.save()
+                ans_det, ans_sim, key_words = predict_rating(list_address[0])
+                rating = Rating.objects.create(user=request.user, answer_detalized=ans_det, answer_simplified=ans_sim, text=list_address[0])
                 self.context['ans_detailed'] = ans_det
                 self.context['ans_simple'] = ans_sim
                 self.context['key_words'] = key_words
                 for el in key_words:
-                    object.keywords_set.create(word=el)
-                return render(request, 'main/mmttextscreen.html', context=self.context)
+                    rating.keywords_set.create(word=el)
+                return render(request, 'main/mmtfilescreen.html', context=self.context)
             else:
-                pass
+                for i in range(len(list_address)):
+                    ans_det, ans_sim, key_words = predict_rating(list_address[i])
+                    rating = Rating.objects.create(user=request.user, answer_detalized=ans_det, answer_simplified=ans_sim, text=list_address[i])
+                    list_address[i] = '; '.join([ans_det, ans_sim, key_words])
+                response = HttpResponse(
+                list_address, content_type=f'application/{object.output_format}')
+                response['Content-Disposition'] = f'attachment; filename="answer.{object.output_format}"'
+                return response
         else:
-            return render(request, 'main/mmttextscreen.html', context=self.context)
+            return render(request, 'main/404.html', context=self.context)
 
 
 class RatingFileView(View):
