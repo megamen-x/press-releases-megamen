@@ -7,12 +7,7 @@
 {% block custom_style %}
 <style>
     [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
-      display: flex;
-      background-color: rgba(40, 40, 40, 1);
-    }
-    [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-toggle"] {
-      display: flex;
-      background-color: rgba(40, 40, 40, 1);
+      background-color: rgba(100, 100, 100, 1);
     }
     [data-thq="thq-dropdown"]:hover > div [data-thq="thq-dropdown-arrow"] {
       transform: rotate(90deg);
@@ -32,7 +27,8 @@
                 </button>
               </form>
               <div class="mmtfilescreen-elemsframe">
-                <form class="mmtfilescreen-fileframe" action='' method="post">
+                <form class="mmtfilescreen-fileframe" enctype="multipart/form-data" method="post">
+                  {% csrf_token %}
                   <div class="mmtfilescreen-fileframe">
                     <div class="mmtfilescreen-chartviewbtn">
                       <div class="mmtfilescreen-insidefr">
@@ -65,14 +61,15 @@
                       </button>
                       <div class="mmtfilescreen-dropdwn-btn">
                         <div data-thq="thq-dropdown" class="mmtfilescreen-thq-dropdown list-item">
-                          <div data-thq="thq-dropdown-toggle" class="mmtfilescreen-dropdown-toggle">
+                          <button data-thq="thq-dropdown-toggle" class="mmtfilescreen-dropdown-toggle">
                             <span class="mmtfilescreen-text1106">Нужный формат файла</span>
-                            <div data-thq="thq-dropdown-arrow" class="mmtfilescreen-dropdown-arrow">
+                            {% comment %} <div data-thq="thq-dropdown-arrow" class="mmtfilescreen-dropdown-arrow">
                               <svg viewBox="0 0 1024 1024" class="mmtfilescreen-icon">
                                 <path d="M426 726v-428l214 214z"></path>
                               </svg>
-                            </div>
-                          </div>
+                            </div> {% endcomment %}
+                          </button>
+                          <br>
                           <select name="output_format" data-thq="thq-dropdown-list" class="mmtfilescreen-dropdown-list">
                             <li data-thq="thq-dropdown" class="mmtfilescreen-dropdown list-item">
                               <div data-thq="thq-dropdown-toggle" class="mmtfilescreen-dropdown-toggle1">
