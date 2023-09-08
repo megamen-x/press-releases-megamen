@@ -10,22 +10,25 @@ class CustomUser(AbstractUser):
 class Rating(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True)
     text = models.TextField()
-    answer = models.CharField(max_length=250)
+    answer_detalized = models.CharField(max_length=10)
+    answer_simplified = models.CharField(max_length=10)
 
 
 class KeyWords(models.Model):
-    word = models.CharField(max_length=40)
+    construction = models.CharField(max_length=250)
     rating_id = models.ForeignKey(Rating, on_delete=models.CASCADE)
 
 
-def user_initial_file_path(instance, filename):
-    return 'user_{0}/initial/{1}'.format(instance.user.id, filename)
+def user_file_path(instance, filename):
+    return 'user_{0}/{1}'.format(instance.user.id, filename)
 
-def user_predict_file_path(instance, filename):
-    return 'user_{0}/predict/{1}'.format(instance.user.id, filename)
+class InputFile(models.Model):
+    
+    class Formats(models.TextChoices):
+        CSV = 'csv'
+        XLSX = 'xlsx'
+        TXT = "txt"
 
-
-class RatingFile(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    file = models.FileField(upload_to=user_initial_file_path)
-    corrected_file = models.FileField(upload_to=user_predict_file_path)
+    file = models.FileField(upload_to=user_file_path)
+    output_format = models.CharField(max_length=4, choices=Formats.choices, default=Formats.CSV)

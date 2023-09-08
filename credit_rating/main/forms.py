@@ -4,11 +4,5 @@ from main.models import *
 
 class RatingForm(ModelForm):
     class Meta:
-        model = Rating
-        fields = ['text']
-
-
-class RatingFileForm(ModelForm):
-    class Meta:
-        model = RatingFile
-        fields = ['file']
+        model = InputFile
+        fields = ['file', 'output_format']

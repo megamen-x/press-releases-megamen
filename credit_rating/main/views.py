@@ -23,7 +23,7 @@ def predict_rating(text: str):
     # if model is None:
     #     model = Model(model_path)
     #     cache.set('model', model, None)
-    return ('YEEEEEEEEEEES', ['first', 'second', 'hren znaet chto'])
+    return ('YEEEEEEEEEEES', 'nooooooooooo', ['first', 'second', 'hren znaet chto'])
 
 
 def read_csv(file: str) -> list:
@@ -53,30 +53,41 @@ def page404(request):
 
 
 class RatingView(View):
-    context = {'title': 'Текстовый ввод (MMT)'}
+    context = {'title': 'Ввод (MMT)'}
 
     def get(self, request):
-        form_text = RatingForm()
-        self.context['form_text'] = form_text
-        self.context['answer'] = None
+        self.context['form'] = RatingForm()
+        self.context['ans_detailed'] = None
+        self.context['ans_simple'] = None
         self.context['key_words'] = None
-        return render(request, 'main/mmttextscreen.html', context=self.context)
+        return render(request, 'main/index.html', context=self.context)
 
     def post(self, request):
-        form_text = RatingForm(request.POST)
-        print(request.POST)
+        form_text = RatingForm(request.POST, request.FILES)
         if form_text.is_valid():
             object = form_text.save(commit=False)
             if request.user.is_authenticated:
                 object.user = request.user
-            ans, key_words = predict_rating(object.text)
-            object.answer = ans
             object.save()
-            self.context['answer'] = ans
-            self.context['key_words'] = key_words
-            for el in key_words:
-                object.keywords_set.create(word=el)
-            return render(request, 'main/mmttextscreen.html', context=self.context)
+            object = InputFile.objects.filter(user=request.user).latest('id')
+            match object.file.path[-4:]:
+                case '.csv':
+                    list_address = read_csv(object.file.path)
+                case 'xlsx':
+                    list_address = read_excel(object.file.path)
+            if len(list_address) == 1:
+                ans_det, ans_sim, key_words = predict_rating(object.text)
+                object.answer_detalized = ans_det
+                object.answer_simplified = ans_sim
+                object.save()
+                self.context['ans_detailed'] = ans_det
+                self.context['ans_simple'] = ans_sim
+                self.context['key_words'] = key_words
+                for el in key_words:
+                    object.keywords_set.create(word=el)
+                return render(request, 'main/mmttextscreen.html', context=self.context)
+            else:
+                pass
         else:
             return render(request, 'main/mmttextscreen.html', context=self.context)
 
@@ -85,19 +96,19 @@ class RatingFileView(View):
     context = {'title': 'Работа с файлами (MMT)'}
 
     def get(self, request):
-        form_file = RatingFileForm()
+        form_file = RatingForm()
         self.context['form_file'] = form_file
         self.context['object'] = None
         return render(request, 'main/mmtfilescreen.html', context=self.context)
 
     @method_decorator(login_required)
     def post(self, request):
-        form_file = RatingFileForm(request.POST, request.FILES)
+        form_file = RatingForm(request.POST, request.FILES)
         if form_file.is_valid():
             input_request = form_file.save(commit=False)
             input_request.user = request.user
             input_request.save()
-            output_request = RatingFile.objects.filter(
+            output_request = InputFile.objects.filter(
                 user=request.user).latest('id')
             format_file = output_request.file.path[-3:]
             match format_file:
@@ -109,11 +120,6 @@ class RatingFileView(View):
                     return render(request, 'main/404.html', context=self.context)
             for i in range(len(list_address)):
                 list_address[i] = predict_rating(list_address[i])
-            with open('tmp.csv', errors='ignore', mode='w') as file:
-                writer = csv.writer(file)
-                writer.writerows(list_address)
-                output_request.corrected_file = file
-                output_request.save(update_fields=['corrected_file'])
             response = HttpResponse(
                 list_address, content_type=f'application/{format_file}')
             response['Content-Disposition'] = f'attachment; filename="answer.{format_file}"'

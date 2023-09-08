@@ -8,5 +8,4 @@ urlpatterns = [
     path('mmtslider', slider, name='project-menu'),
     path('mmtmegamen', megamen, name='megamen-team-page'),
     path('404', page404, name='404'),
-    path('main', RatingView.as_view(), name='main-page'),
 ]
