@@ -33,24 +33,26 @@ def read_csv(file: str) -> list:
         file_content = [''.join(row) for row in reader]
     return file_content
 
-
 def read_excel(file: str) -> list:
     workbook = openpyxl.load_workbook(file)
     sheet = workbook.active
     file_content = [row for row in sheet.iter_rows(values_only=True)]
     return file_content
 
+def read_txt(file: str) -> list:
+    with open(file, errors='ignore', mode='r') as f:
+        # encoding='cp1251'
+        file = f.readlines()
+    return file
 
 def slider(request):
     return render(request, 'main/mmtslider.html', context={'title': 'Справка (MMT)'})
-
 
 def megamen(request):
     return render(request, 'main/mmtmegamen.html', context={'title': 'Наша команда (MMT)'})
 
 def page404(request):
     return render(request, 'main/404.html')
-
 
 class RatingView(View):
     context = {'title': 'Ввод (MMT)'}
@@ -60,7 +62,7 @@ class RatingView(View):
         self.context['ans_detailed'] = None
         self.context['ans_simple'] = None
         self.context['key_words'] = None
-        return render(request, 'main/index.html', context=self.context)
+        return render(request, 'main/mmtfilescreen.html', context=self.context)
 
     @method_decorator(login_required)
     def post(self, request):
@@ -75,6 +77,8 @@ class RatingView(View):
                     list_address = read_csv(object.file.path)
                 case 'xlsx':
                     list_address = read_excel(object.file.path)
+                case '.txt':
+                    list_address = read_txt(object.file.path)
             if len(list_address) == 1:
                 ans_det, ans_sim, key_words = predict_rating(list_address[0])
                 rating = Rating.objects.create(user=request.user, answer_detalized=ans_det, answer_simplified=ans_sim, text=list_address[0])
@@ -85,10 +89,11 @@ class RatingView(View):
                     rating.keywords_set.create(word=el)
                 return render(request, 'main/mmtfilescreen.html', context=self.context)
             else:
+                print(object.output_format)
                 for i in range(len(list_address)):
                     ans_det, ans_sim, key_words = predict_rating(list_address[i])
                     rating = Rating.objects.create(user=request.user, answer_detalized=ans_det, answer_simplified=ans_sim, text=list_address[i])
-                    list_address[i] = '; '.join([ans_det, ans_sim, key_words])
+                    list_address[i] = '; '.join([ans_det, ans_sim, *key_words]) + "\n"
                 response = HttpResponse(
                 list_address, content_type=f'application/{object.output_format}')
                 response['Content-Disposition'] = f'attachment; filename="answer.{object.output_format}"'
