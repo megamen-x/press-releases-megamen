@@ -26,7 +26,7 @@
                             type="file" 
                             id="upload" 
                             name="file"
-                            accept=".txt,.docx,.xml,.csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            accept=".txt,.docx,.xml,.csv"
                             hidden
                           />
                           <label class="mmtfilescreen-filelbl", for="upload">
@@ -48,7 +48,7 @@
                           <span>Загрузить файл</span>
                         </span>
                       </button>
-                      <button class="mmtfilescreen-dfframebtn">
+                      {% comment %} <button class="mmtfilescreen-dfframebtn">
                         <img
                           alt="database1720"
                               src="{% static "svg/database1720-aopp.svg" %}"
@@ -57,14 +57,14 @@
                         <span class="mmtfilescreen-text06">
                           <span>Системные файлы</span>
                         </span>
-                      </button>
+                      </button> {% endcomment %}
                     </div>
-                    <div class="mmtfilescreen-attentionfile">
+                    {% comment %} <div class="mmtfilescreen-attentionfile">
                       <span class="mmtfilescreen-text08">
                         <span>Или же укажите ссылку на архив</span>
                       </span>
-                    </div>
-                    <div class="mmtfilescreen-ur-lframe">
+                    </div> {% endcomment %}
+                    {% comment %} <div class="mmtfilescreen-ur-lframe">
                       <div class="mmtfilescreen-ur-lbox">
                         <div class="mmtfilescreen-https">
                           <span class="mmtfilescreen-text10">
@@ -83,18 +83,87 @@
                           <span>Загрузить</span>
                         </span>
                       </button>
-                    </div>
+                    </div> {% endcomment %}
                   </div>
                 </form>
                 <div class="mmtfilescreen-attentionfile1">
                   <span class="mmtfilescreen-text14">
                     <span>
                       Для загрузки файла нажмите на поле над кнопками, подтвердить
-                      загрузку файла можно кнопкой слева (Загрузить файл),
-                      редактировать текущие файлы Базы данных Аккаунта можно
-                      кнопкой справа (Системные файлы)
+                      загрузку файла можно кнопкой Загрузить файл
                     </span>
                   </span>
+                </div>
+              </div>
+              <div class="mmtfilescreen-elemsframe1">
+                <div class="mmtfilescreen-fileframe2">
+                  <div class="mmtfilescreen-answerbig">
+                    <span class="mmtfilescreen-text07">
+                      Результат работы модели
+                    </span>
+                    <div class="mmtfilescreen-contextcolumn">
+                      <div class="mmtfilescreen-classresp">
+                        <div class="mmtfilescreen-respfr">
+                          <div class="mmtfilescreen-rowresp">
+                            <div class="mmtfilescreen-container1">
+                              <span class="mmtfilescreen-text108">Категория</span>
+                            </div>
+                            <div class="mmtfilescreen-container2">
+                              <span class="mmtfilescreen-text09">
+                                <span>Уровень</span>
+                                <br />
+                                <span>рейтинга</span>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="mmtfilescreen-rowresp2">
+                            <div class="mmtfilescreen-container3">
+                              <span class="mmtfilescreen-text13">
+                                ml kat 1
+                              </span>
+                            </div>
+                            <div class="mmtfilescreen-container4">
+                              <span class="mmtfilescreen-text116">
+                                ml kat 2
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mmtfilescreen-text1">
+                        <span class="mmtfilescreen-text17">
+                          Визуальное выделение слов:
+                        </span>
+                      </div>
+                      <div class="mmtfilescreen-htmlresp">
+                        <div class="mmtfilescreen-respfr1">
+                          <div class="mmtfilescreen-rowresp3">
+                            <span>'html-page-context'</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mmtfilescreen-text11">
+                        <span class="mmtfilescreen-text19">Ключевые слова:</span>
+                      </div>
+                      <div class="mmtfilescreen-htmlresp1">
+                        <div class="mmtfilescreen-respfr2">
+                          <div class="mmtfilescreen-rowresp4">
+                            <ul class="mmtfilescreen-ul list">
+                              <li class="mmtfilescreen-li list-item">
+                                <span>Text</span>
+                              </li>
+                              <li class="mmtfilescreen-li1 list-item">
+                                <span>Text</span>
+                              </li>
+                              <li class="mmtfilescreen-li2 list-item">
+                                <span>Text</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="mmtfilescreen-hackatt">
