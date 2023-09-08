@@ -1,0 +1,260 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>ММТ-ГИС. Меню</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}
+      body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}
+      p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,
+      figcaption {  margin: 0;  padding: 0;}
+      button {  background-color: transparent;}
+      button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}
+      button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}
+      button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <link type="image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="shortcut icon">
+    <link type="Image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="icon">
+  </head>
+  <body>
+    <div>
+      <link href="{% static "css/mmtslider.css" %}" rel="stylesheet" />
+
+      <div class="mmtslider-container">
+        <div class="mmtslider-mmtslider">
+          <div class="mmtslider-header">
+            <form>
+              <button class="test-btn-class", formaction="{% url 'text' %}">
+                <img
+                  src="{% static "svg/menubtn5126-mnon.svg" %}"
+                  {% comment %} src="public/external/menubtn5126-mnon.svg" {% endcomment %}
+                  alt="menubtn5126"
+                  class="mmtslider-menubtn"
+                />
+              </button>
+            </form>
+            <form>
+              <button class="test-btn-class", formaction="{% url 'profile' %}">
+                <img
+                  alt="userbtn1747"
+                  src="{% static "svg/userbtn1747-8s7.svg" %}"
+                  class="mmtprofile-userbtn"
+                />
+              </button>
+            </form>
+          </div>
+          <div class="mmtslider-slidermenu">
+            <div class="mmtslider-welcome">
+              <span class="mmtslider-text">
+                <span>Добро пожаловать в ММТ-ГИС!</span>
+              </span>
+            </div>
+            <div class="mmtslider-fistfield">
+              <div class="mmtslider-frame35">
+                <span class="mmtslider-text02"><span>Здесь вы можете:</span></span>
+              </div>
+              <div class="mmtslider-pointsframe1">
+                <div class="mmtslider-textframep1">
+                  <span class="mmtslider-text17">
+                    <span>
+                      <span>
+                        1. Ознакомьтесь с техническим заданием наших партнеров;
+                      </span>
+                      <br />
+                      <span>
+                        2. Посмотрете инструкцию по использованию приложения;
+                      </span>
+                      <br />
+                      <span>
+                        3. Обратитесь к документации;
+                      </span>
+                      <br />
+                      <span>
+                        4. Перейдите на внешние ссылки нашей команды (например, GitHub или
+                        Телеграмм);
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="{% static "png/devider1771-8xkq-200h.png" %}"
+              {% comment %} src="public/external/devider1771-8xkq-200h.png" {% endcomment %}
+              alt="Devider1771"
+              class="mmtslider-devider"
+            />
+            <div class="mmtslider-secfield">
+              <div class="mmtslider-frame36">
+                <span class="mmtslider-text28">
+                  <span class="mmtslider-text29">Наши партнеры "Правительство Санкт-Петербурга, Комитет по информатизации и связи"</span>
+                  <span class="mmtslider-text30">и их техническое задание:</span>
+                </span>
+              </div>
+              <div class="mmtslider-pointsframe2">
+                <div class="mmtslider-textframep2">
+                  <span class="mmtslider-text40">
+                    <span>
+                      <span>1. Построить модель, которая сможет адаптироваться к задачам определения корректного адреса, содержащегося в исходной базе данных.</span>
+                      <br />
+                      <span>2. Поработать с наборами данных с адресами разных форматов и произвольно введенными адресами.</span>
+                      <br />
+                      <span>3. Увидеть решение проблемы неправильного определения адресов и координат</span>
+                      <br />
+                      <span>4. Проанализировать полезность модели для решения вопросов совершенствования методов определения корректного адреса из Государственных информационных систем.</span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="{% static "png/devider1786-sy2b-200h.png" %}"
+              {% comment %} src="public/external/devider1786-sy2b-200h.png" {% endcomment %}
+              alt="Devider1786"
+              class="mmtslider-devider1"
+            />
+            <div class="mmtslider-mainmenubtns">
+              <form>
+                <button class="mmtslider-docsbtn", formaction="https://github.com/mireaMegaman/spb_hack/tree/django_project#readme">
+                  <img
+                    src="{% static "svg/filetext1789-hb4b.svg" %}"
+                    {% comment %} src="public/external/filetext1789-hb4b.svg" {% endcomment %}
+                    alt="filetext1789"
+                    class="mmtslider-filetext"
+                  />
+                  <span class="mmtslider-text49"><span>Документация</span></span>
+                </button>
+                <button class="mmtslider-repbtn", formaction="https://github.com/mireaMegaman/spb_hack/tree/django_project">
+                  <img
+                    src="{% static "svg/github1797-561.svg" %}"
+                    {% comment %} src="public/external/github1797-561.svg" {% endcomment %}
+                    alt="github1797"
+                    class="mmtslider-github"
+                  />
+                  <span class="mmtslider-text51"><span>Репозиторий</span></span>
+                </button>
+                <button class="mmtslider-repbtn1", formaction="https://www.youtube.com/channel/UC5qC_I5o2aatXDSxTHbjxzg">
+                  <img
+                    src="{% static "svg/send1801-3q7h.svg" %}"
+                    {% comment %} src="public/external/send1801-3q7h.svg" {% endcomment %}
+                    alt="send1801"
+                    class="mmtslider-send"
+                  />
+                  <span class="mmtslider-text53"><span>YouTube</span></span>
+                </button>
+                {% comment %} <button class="mmtslider-rateappbtn", formaction="https://github.com/mireaMegaman/hackaton/issues">
+                  <img
+                    src="{% static "svg/checksquare1806-qysc.svg" %}"
+                    alt="checksquare1806"
+                    class="mmtslider-checksquare"
+                  />
+                  <span class="mmtslider-text55"><span>Инструкция по установке</span></span>
+                </button> {% endcomment %}
+              </form>
+            </div>
+            <img
+              src="{% static "png/devider1810-r3q9-200h.png" %}"
+              {% comment %} src="public/external/devider1810-r3q9-200h.png" {% endcomment %}
+              alt="Devider1810"
+              class="mmtslider-devider2"
+            />
+            <div class="mmtslider-lastfield">
+              <div class="mmtslider-frame33">
+                <span class="mmtslider-text57">
+                  <span class="mmtslider-text58">Особая</span>
+                  <span class="mmtslider-text59">благодарность</span>
+                </span>
+              </div>
+              <div class="mmtslider-frame32">
+                <span class="mmtslider-text61">
+                  <span>
+                    <span>1.</span>
+                    <br />
+                    <span>2.</span>
+                    <br />
+                    <span>3.</span>
+                    <br />
+                  </span>
+                </span>
+                <div class="mmtslider-frame34">
+                  <span class="mmtslider-text74">
+                    <span>
+                      <span>Цифровому прорыву;</span>
+                      <br>
+                      <span>Правительству Санкт-Петербурга;</span>
+                      <br>
+                      <span>Нашим кураторам на этом этапе;</span>
+                      <br>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <form>
+              <button class="mmtslider-backbtn", formaction="{% url 'text' %}">
+                <img
+                    src="{% static "svg/codesandbox1819-oh0e.svg" %}"
+                    {% comment %} src="public/external/codesandbox1819-oh0e.svg" {% endcomment %}
+                  alt="codesandbox1819"
+                  class="mmtslider-codesandbox"
+                />
+              </button>
+            </form>
+          </div>
+          <div class="mmtslider-footer">
+            <div class="mmtslider-footerframe">
+              <form>
+                <button class="safaribtn", formaction="https://www.google.com/">
+                  <img
+                    src="{% static "svg/compassbtn1874-oqd.svg" %}"
+                    {% comment %} src="public/external/compassbtn1874-oqd.svg" {% endcomment %}
+                    alt="compassbtn1874"
+                    class="mmtslider-compassbtn"
+                  />
+                </button>
+              </form>
+              <form>
+                <button class="ghbtn", formaction="https://github.com/mireaMegaman/hackaton/">
+                  <img
+                    src="{% static "svg/githubbtn1877-uk5.svg" %}"
+                    {% comment %} src="public/external/githubbtn1877-uk5.svg" {% endcomment %}
+                    alt="githubbtn1877"
+                    class="mmtslider-githubbtn"
+                  />
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

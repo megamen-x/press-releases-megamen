@@ -1,0 +1,127 @@
+{% extends 'main/mmtmainframe.html' %}
+{% load static %}
+{% block pg_title %}
+  Работа с файлами (MMT)
+{% endblock %}
+{% block bgr_cont %} mmtfilescreen-container {% endblock %}
+
+
+          {% block pg_context %}
+            <link href="{% static "css/mmtfilescreen.css" %}" rel="stylesheet" />
+            <div class="mmtfilescreen-mainfr">
+              <form>
+                <button class="mmtfilescreen-mmmenu", formaction="{% url 'megamen-team-page' %}">
+                  <span class="mmtfilescreen-text">
+                    <span>MEGAMEN TEAM</span>
+                  </span>
+                </button>
+              </form>
+              <div class="mmtfilescreen-elemsframe">
+                <form class="mmtfilescreen-fileframe" action='' method="post">
+                  <div class="mmtfilescreen-fileframe">
+                    <div class="mmtfilescreen-chartviewbtn">
+                      <div class="mmtfilescreen-insidefr">
+                        <span class="mmtfilescreen-text02">
+                          <input 
+                            type="file" 
+                            id="upload" 
+                            name="file"
+                            accept=".txt,.docx,.xml,.csv,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            hidden
+                          />
+                          <label class="mmtfilescreen-filelbl", for="upload">
+                            <span>Выберите свой файл здесь</span>
+                          </label> 
+                        </span>
+                      </div>
+                    </div>
+                    <div class="mmtfilescreen-fileselem">
+                      <button class="mmtfilescreen-chartviewbtn1" type="submit">
+                        <div class="mmtfilescreen-deviceupbtn">
+                          <img
+                            alt="logout1727"
+                              src="{% static "svg/logout1727-wcfe.svg" %}"
+                            class="mmtfilescreen-logout"
+                          />
+                        </div>
+                        <span class="mmtfilescreen-text04">
+                          <span>Загрузить файл</span>
+                        </span>
+                      </button>
+                      <button class="mmtfilescreen-dfframebtn">
+                        <img
+                          alt="database1720"
+                              src="{% static "svg/database1720-aopp.svg" %}"
+                          class="mmtfilescreen-database"
+                        />
+                        <span class="mmtfilescreen-text06">
+                          <span>Системные файлы</span>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="mmtfilescreen-attentionfile">
+                      <span class="mmtfilescreen-text08">
+                        <span>Или же укажите ссылку на архив</span>
+                      </span>
+                    </div>
+                    <div class="mmtfilescreen-ur-lframe">
+                      <div class="mmtfilescreen-ur-lbox">
+                        <div class="mmtfilescreen-https">
+                          <span class="mmtfilescreen-text10">
+                            <span>https://</span>
+                          </span>
+                        </div>
+                      </div>
+                      <input
+                        name="url"
+                        type="text"
+                        placeholder="www.your-site.com/file/.."
+                        class="mmtfilescreen-textinput"
+                      />
+                      <button class="mmtfilescreen-dfframebtn1" type="submit">
+                        <span class="mmtfilescreen-text12">
+                          <span>Загрузить</span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                <div class="mmtfilescreen-attentionfile1">
+                  <span class="mmtfilescreen-text14">
+                    <span>
+                      Для загрузки файла нажмите на поле над кнопками, подтвердить
+                      загрузку файла можно кнопкой слева (Загрузить файл),
+                      редактировать текущие файлы Базы данных Аккаунта можно
+                      кнопкой справа (Системные файлы)
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <div class="mmtfilescreen-hackatt">
+                <img
+                  alt="elem6I208"
+                  src="{% static "svg/cir_pror_mmt.svg" %}"
+                  class="mmtfilescreen-elem6"
+                />
+                <div class="mmtfilescreen-textframe">
+                  <span class="mmtfilescreen-text16">
+                    <span>
+                      <span>Команда MEGAMEN</span>
+                      <br />
+                      <span>Москва, 2023</span>
+                    </span>
+                  </span>
+                </div>
+                <form>
+                  <button class="mmtfilescreen-btn", formaction="{% url 'text' %}">
+                    {% comment %} Назад {% endcomment %}
+                    <img
+                      src="{% static "svg/codesandbox1819-zhyfd.svg" %}"
+                      alt="codesandbox1819"
+                      class="mmtslider-codesandbox"
+                    />
+                  </button>
+                </form>
+              </div>
+            </div>
+          {% endblock %}

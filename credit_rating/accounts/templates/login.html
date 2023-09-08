@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>ММТ-ГИС. Авторизация</title>
+    <meta property="og:title" content="Login - exported project" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <link type="image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="shortcut icon">
+    <link type="Image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="icon">
+  </head>
+  <body>
+    <div>
+      <link href="{% static "css/login.css" %}" rel="stylesheet" />
+
+      <div class="login-container">
+        <div class="login-container1">
+          <div class="login-container2">
+            <div class="login-container3">
+              <h1 class="login-text">Авторизация</h1>
+            </div>
+            <form action="" method="post">
+              {% csrf_token %}
+              <div class="login-container4">
+                <div class="login-form">
+                  <span class="login-text1">Имя пользователя*</span>
+                  <input
+                    name="username"
+                    type="text"
+                    placeholder="Ваше имя пользователя"
+                    class="login-textinput input"
+                  />
+                </div>
+              </div>
+              <div class="login-container5">
+                <div class="login-form1">
+                  <span class="login-text2">Пароль*</span>
+                  <input
+                    name="password"
+                    type="password"
+                    placeholder="Ваш пароль"
+                    class="login-textinput1 input"
+                  />
+                </div>
+              </div>
+              <div class="login-container6">
+                <div class="login-form2">
+                  <button type="submit" class="login-button button">
+                    Вход
+                  </button>
+                </div>
+              </div>
+              <br>  
+            </form>
+            <br>
+            <div class="login-container6">
+              <form class="login-form2">
+                <button class="login-button button" formaction="{% url 'text' %}">
+                  Назад
+                </button>
+              </form>
+            </div>
+            {% comment %} <form action="" method="post">
+                {% csrf_token %}
+                <table>
+                {{ form.as_p }} 
+                </table>
+                <input type="submit" value="Отправить">
+            </form> {% endcomment %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

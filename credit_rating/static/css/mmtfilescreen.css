@@ -1,0 +1,462 @@
+.mmtfilescreen-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(07, 07, 07, 1);
+}
+.mmtfilescreen-cvfilescreen {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.mmtfilescreen-header {
+  height: 50px;
+  display: flex;
+  padding: 7px 20px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmtfilescreen-menubtn {
+  width: 32px;
+  height: 33px;
+}
+.mmtfilescreen-userbtn {
+  width: 28px;
+  height: 26px;
+}
+.mmtfilescreen-mainfr {
+  gap: 55px;
+  /* height: 1010px; */
+  height: auto;
+  display: flex;
+  padding: 15px 0;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('../png/BGS_2.png');
+  background-size: cover; 
+  background-position: center;
+}
+.mmtfilescreen-mmmenu {
+  gap: 5px;
+  width: 250px;
+  display: flex;
+  margin-top: 45px;
+  padding: 15px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: rgba(24, 24, 24, 1);
+  transition: all 0.7s;
+}
+.mmtfilescreen-mmmenu:hover {
+  width: 260px;
+  padding: 20px;
+  background-color: rgb(39, 39, 39);
+}
+.mmtfilescreen-text {
+  color: rgba(82, 217, 169, 1);
+  height: auto;
+  font-size: 22px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmtfilescreen-elemsframe {
+  gap: 30px;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.mmtfilescreen-fileframe {
+  margin-top: 15px;
+  gap: 40px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: column;
+}
+.mmtfilescreen-chartviewbtn {
+  gap: 10px;
+  display: flex;
+  padding: 15px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmtfilescreen-insidefr {
+  gap: 10px;
+  width: 341px;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: rgba(28, 28, 28, 1);
+  transition: 0.7s;
+}
+.mmtfilescreen-insidefr:hover {
+  width: 360px;
+}
+.mmtfilescreen-text02 {
+  color: rgba(82, 217, 169, 1);
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmtfilescreen-fileselem {
+  gap: 8px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.mmtfilescreen-chartviewbtn1 {
+  gap: 10px;
+  display: flex;
+  padding: 5px 10px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: rgba(30, 30, 30, 1);
+  transition: 0.7s;
+}
+.mmtfilescreen-chartviewbtn1:hover {
+  background-color: rgb(40, 40, 40);
+  padding: 4px 15px;
+}
+.mmtfilescreen-deviceupbtn {
+  gap: 10px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  padding: 2px;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 5px;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: rgba(30, 30, 30, 1); */
+}
+.mmtfilescreen-logout {
+  width: 24px;
+  height: 24px;
+}
+.mmtfilescreen-text04 {
+  color: rgba(82, 217, 169, 1);
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmtfilescreen-dfframebtn {
+  gap: 10px;
+  display: flex;
+  padding: 2px 10px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: rgba(30, 30, 30, 1);
+  transition: 0.7s;
+}
+.mmtfilescreen-dfframebtn:hover {
+  background-color: rgb(40, 40, 40);
+  padding: 4px 15px;
+}
+.mmtfilescreen-database {
+  width: 24px;
+  height: 24px;
+}
+.mmtfilescreen-text06 {
+  color: rgba(82, 217, 169, 1);
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmtfilescreen-attentionfile {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.mmtfilescreen-text08 {
+  color: rgba(100, 100, 100, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmtfilescreen-ur-lframe {
+  width: auto;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 5px;
+  border-radius: 10px;
+  padding-right: 5px;
+  flex-direction: row;
+  padding-bottom: 5px;
+  justify-content: center;
+  background-color: rgba(24, 24, 24, 1);
+}
+.mmtfilescreen-ur-lbox {
+  gap: 10px;
+  width: 70px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 10px 0 0 10px;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmtfilescreen-https {
+  gap: 10px;
+  height: 40px;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.mmtfilescreen-text10 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmtfilescreen-textinput {
+  gap: 10px;
+  color: rgba(88, 88, 88, 1);
+  height: 35px;
+  display: flex;
+  flex-grow: 1;
+  font-size: 16px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 400;
+  justify-content: flex-start;
+  background-color: #181818;
+}
+.mmtfilescreen-dfframebtn1 {
+  gap: 10px;
+  height: 40px;
+  display: flex;
+  padding: 5px 10px;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: rgba(38, 38, 38, 1);
+  transition: 0.7s;
+}
+.mmtfilescreen-dfframebtn1:hover {
+  padding: 10px 10px;
+  background-color: rgba(18, 18, 18, 1);
+
+}
+.mmtfilescreen-text12 {
+  color: rgba(82, 217, 169, 1);
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmtfilescreen-attentionfile1 {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.mmtfilescreen-text14 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmtfilescreen-hackatt {
+  gap: 30px;
+  width: 320px;
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.mmtfilescreen-elem6 {
+  width: 213px;
+  height: 124px;
+}
+.mmtfilescreen-textframe {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.mmtfilescreen-text16 {
+  color: rgba(228, 228, 228, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmtfilescreen-footer {
+  display: flex;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.mmtfilescreen-footerframe {
+  gap: 150px;
+  height: 50px;
+  display: flex;
+  padding: 0 20px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmtfilescreen-compassbtn {
+  gap: 10px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  padding: 9px 7px;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmtfilescreen-home {
+  width: 24px;
+  height: 24px;
+}
+.mmtfilescreen-filesbtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  padding: 0 2px;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmtfilescreen-fileplus {
+  width: 24px;
+  height: 24px;
+}
+.mmtfilescreen-githubbtn {
+  width: 40px;
+  height: 40px;
+}
+.mmtfilescreen-btn {
+  gap: 10px;
+  margin-bottom: 35px;
+  height: 45px;
+  display: flex;
+  padding: 2px 10px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: rgba(24, 24, 24, 1);
+  color: #7ce8c2;
+  transition: 0.7s;
+
+}
+.mmtfilescreen-btn:hover {
+  color: #7ce8c2;
+  height: 50px;
+  padding: 2px 15px;
+  background-color: rgba(40, 40, 40, 1);
+}

@@ -1,0 +1,407 @@
+.mmttextscreen-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(07, 07, 07, 1);
+}
+.mmttextscreen-cvtextscreen {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.mmttextscreen-header {
+  height: 50px;
+  display: flex;
+  padding: 7px 20px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmttextscreen-menubtn {
+  width: 32px;
+  height: 33px;
+}
+.mmttextscreen-userbtn {
+  width: 28px;
+  height: 26px;
+}
+.mmttextscreen-mainfr {
+  gap: 55px;
+  height: auto;
+  display: flex;
+  padding: 30px 30px 30px 30px;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('../png/BGS_1.png');
+  background-size: cover; 
+  background-position: center;
+}
+.mmttextscreen-mmmenu {
+  gap: 5px;
+  width: 250px;
+  display: flex;
+  padding: 15px;
+  margin-top: 45px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: rgba(24, 24, 24, 1);
+  transition: all 0.7s;
+}
+.mmttextscreen-mmmenu:hover {
+  width: 260px;
+  padding: 20px;
+  background-color: rgb(39, 39, 39);
+}
+.mmttextscreen-text {
+  color: rgba(82, 217, 169, 1);
+  height: auto;
+  font-size: 22px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmttextscreen-elemsframe {
+  gap: 50px;
+  width: 400px;
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.mmttextscreen-textbox {
+  margin-top: 12px;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.mmttextscreen-outerframe {
+  gap: 10px;
+  width: 320px;
+  display: flex;
+  padding: 6px;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmttextscreen-innerframe {
+  gap: 10px;
+  display: flex;
+  padding: 5px 10px;
+  align-self: stretch;
+  align-items: flex-start;
+  border-radius: 5px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(24, 24, 24, 1);
+}
+.mmttextscreen-inputframe {
+  gap: 10px;
+  color: rgb(150, 150, 150);
+  height: 50px;
+  width: 100%;
+  display: flex;
+  padding: 3px;
+  overflow: hidden;
+  font-size: 16px;
+  text-align: left;
+  align-items: flex-start;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 400;
+  border-radius: 5px;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmttextscreen-dividertxt {
+  width: 285px;
+  height: 3px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background-color: rgba(82, 217, 169, 1);
+}
+.mmttextscreen-hinttext {
+  width: 285px;
+  height: 35px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.mmttextscreen-text02 {
+  top: -0.5px;
+  color: rgb(110, 110, 110);
+  width: 285px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmttextscreen-fileconfelem {
+  margin-top: 20px;
+  gap: 22px;
+  width: auto;
+  height: 45px;
+  display: flex;
+  padding: 0 5px;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+.mmttextscreen-dfframebtn {
+  gap: 10px;
+  display: flex;
+  padding: 2px 10px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: rgba(38, 38, 38, 1);
+  transition: 0.7s;
+}
+.mmttextscreen-dfframebtn:hover {
+  background-color: rgb(50, 50, 50);
+  padding: 4px 15px;
+}
+.mmttextscreen-checkcircle {
+  width: 24px;
+  height: 24px;
+}
+.mmttextscreen-text04 {
+  color: rgba(82, 217, 169, 1);
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmttextscreen-chartviewbtn {
+  gap: 10px;
+  display: flex;
+  padding: 10px 10px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: rgba(38, 38, 38, 1);
+  transition: 0.7s;
+}
+.mmttextscreen-chartviewbtn:hover {
+  background-color: rgb(50, 50, 50);
+  padding: 4px 15px;
+}
+.mmttextscreen-slash {
+  width: 24px;
+  height: 24px;
+}
+.mmttextscreen-text06 {
+  color: rgba(82, 217, 169, 1);
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmttextscreen-textoutputframe {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: column;
+}
+.mmttextscreen-attentiontext {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.mmttextscreen-text08 {
+  color: rgba(255, 255, 255, 1);
+  width: 320px;
+  height: auto;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmttextscreen-hackatt {
+  gap: 30px;
+  width: 320px;
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.mmttextscreen-elem6 {
+  width: 213px;
+  height: 124px;
+}
+.mmttextscreen-textframe {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.mmttextscreen-text10 {
+  color: rgba(228, 228, 228, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 20px;
+  font-style: Medium;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.mmttextscreen-footer {
+  display: flex;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.mmttextscreen-footerframe {
+  gap: 150px;
+  height: 50px;
+  display: flex;
+  padding: 0 20px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmttextscreen-compassbtn {
+  gap: 10px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  padding: 9px 7px;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmttextscreen-home {
+  width: 24px;
+  height: 24px;
+}
+.mmttextscreen-filesbtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  padding: 0 2px;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmttextscreen-fileplus {
+  width: 24px;
+  height: 24px;
+}
+.mmttextscreen-githubbtn {
+  width: 40px;
+  height: 40px;
+}
+.mmttextscreen-btn {
+  gap: 10px;
+  height: 45px;
+  margin-bottom: 35px;
+  display: flex;
+  padding: 2px 10px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: rgba(24, 24, 24, 1);
+  color: #7ce8c2;
+  transition: 0.7s;
+
+}
+.mmttextscreen-btn:hover {
+  color: #7ce8c2;
+  height: 50px;
+  padding: 2px 15px;
+  background-color: rgba(40, 40, 40, 1);
+}
+.mmttextscreen-btn2 {
+  gap: 10px;
+  height: 45px;
+  display: flex;
+  padding: 2px 10px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: rgba(24, 24, 24, 1);
+  color: #a0a0a0;
+  transition: 0.7s;
+
+}
+.mmttextscreen-btn2:hover {
+  /* color: #7ce8c2; */
+  color: #d6d6d6;
+  height: 50px;
+  padding: 2px 17px;
+  /* background-color: rgba(40, 40, 40, 1); */
+}

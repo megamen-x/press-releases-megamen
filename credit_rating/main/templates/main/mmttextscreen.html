@@ -1,0 +1,114 @@
+{% extends 'main/mmtmainframe.html' %}
+{% load static %}
+{% block pg_title %}
+  Текстовый ввод (MMT)
+{% endblock %}
+{% block bgr_cont %} mmttextscreen-container {% endblock %}
+
+
+          {% block pg_context %}
+            <link href="{% static "css/index.css" %}" rel="stylesheet" />
+            <div class="mmttextscreen-mainfr">
+              <form>
+                <button class="mmttextscreen-mmmenu", formaction="{% url 'megamen-team-page' %}">
+                  <span class="mmttextscreen-text">
+                    <span>MEGAMEN TEAM</span>
+                  </span>
+                </button>
+              </form>
+              <div class="mmttextscreen-elemsframe">
+                <form class="mmttextscreen-textbox" action='' method="post">
+                  <div class="mmttextscreen-textbox">
+                    {% csrf_token %}
+                    <div class="mmttextscreen-outerframe">
+                      <div class="mmttextscreen-innerframe">
+                        <input
+                          name="text"
+                          type="text"
+                          placeholder="Введите ваш текст сюда"
+                          class="mmttextscreen-inputframe"
+                        />
+                        <div class="mmttextscreen-dividertxt"></div>
+                        <div class="mmttextscreen-hinttext">
+                          {% if answer %}
+                            <span class="mmttextscreen-text02">{{ answer }}</span>
+                          {% else %}
+                          <span class="mmttextscreen-text02">
+                            <span>
+                              Подсказка: нажмите на поле выше, чтобы ввести текст
+                            </span>
+                          
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mmttextscreen-fileconfelem">
+                      <button class="mmttextscreen-dfframebtn", formaction="{% url 'text' %}">
+                        <img
+                          alt="checkcircleI208"
+                          src="{% static "svg/checkcirclei208-g49t.svg" %}"
+                          class="mmttextscreen-checkcircle"
+                        />
+                        <span class="mmttextscreen-text04">
+                          <span>Принять</span>
+                        </span>
+                      </button>
+                      <button class="mmttextscreen-chartviewbtn", formaction="{% url 'text' %}">
+                        <img
+                          alt="slashI208"
+                          src="{% static "svg/slashi208-sqhg.svg" %}"
+                          class="mmttextscreen-slash"
+                        />
+                        <span class="mmttextscreen-text06">
+                          <span>Отменить</span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                {% comment %} <div class="mmttextscreen-textoutputframe"></div> {% endcomment %}
+                <form>
+                  <button class="mmttextscreen-btn2", formaction="{% url 'file' %}">
+                    Если хотите загрузить файл
+                  </button>
+                </form>
+                <div class="mmttextscreen-attentiontext">
+                  <span class="mmttextscreen-text08">
+                    <span>
+                      Для быстрой демонстрации работы модели вы можете ввести свой
+                      текст в поле выше, результатом работы будет список
+                      контексто-значимых слов.
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <div class="mmttextscreen-hackatt">
+                <img
+                  alt="elem6I208"
+                  {% comment %} src="{% static "png/elem6i208-59lv-200h.png" %}" {% endcomment %}
+                  src="{% static "svg/cir_pror_mmt.svg" %}"
+                  class="mmttextscreen-elem6"
+                />
+                <div class="mmttextscreen-textframe">
+                  <span class="mmttextscreen-text10">
+                    <span>
+                      <span>Команда MEGAMEN</span>
+                      <br />
+                      <span>Москва, 2023</span>
+                    </span>
+                  </span>
+                </div>
+                <form>
+                  <button class="mmttextscreen-btn", formaction="{% url 'text' %}">
+                    {% comment %} Назад {% endcomment %}
+                    <img
+                      src="{% static "svg/codesandbox1819-zhyfd.svg" %}"
+                      alt="codesandbox1819"
+                      class="mmtslider-codesandbox"
+                    />
+                  </button>
+                </form>
+              </div>
+            </div>
+          {% endblock %}
+

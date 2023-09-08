@@ -1,0 +1,113 @@
+{% extends 'main/mmtmainframe.html' %}
+{% load static %}
+{% block pg_title %}
+  Работа с файлами (MMT)
+{% endblock %}
+{% block bgr_cont %} -vprofile-container {% endblock %}
+
+          {% block pg_context %}
+            <link href="{% static "css/profile_user.css" %}" rel="stylesheet" />
+            <div class="-vprofile-mainfr">
+              <div class="-vprofile-elemsframe">
+                <div class="-vprofile-profiler">
+                  <span class="-vprofile-text">Профиль пользователя</span>
+                  <img
+                    alt="Devider1712"
+                    src="{% static "png/devider1786-vt79-200h.png" %}"
+                    class="-vprofile-devider"
+                  />
+                  <div class="-vprofile-frame18">
+                    <div class="-vprofile-frame17">
+                      <div class="-vprofile-frame41">
+                        <span class="-vprofile-text1">
+                          Логин:
+                        </span>
+                        <span style="color: rgb(160, 160, 160)"> | </span>
+                        <span class="-vprofile-text1">
+                          {% if user.is_authenticated %}
+                              <p>{{ user.get_username }}</p>
+                          {% else %}
+                              <p style="color:#353535;"> </p>
+                          {% endif %}
+                        </span>
+                      </div>
+                      <div class="-vprofile-frame41">
+                        <span class="-vprofile-text2">
+                          Ваш почтовый адрес:
+                        </span>
+                        <span style="color: rgb(160, 160, 160)"> | </span>
+                        <span class="-vprofile-text2">
+                          {% if user.is_authenticated %}
+                              <p>{{ email }}</p>
+                          {% else %}
+                              <p style="color:#353535;">Войдите в аккаунт</p>
+                          {% endif %}
+                        </span>
+                      </div>
+                      <div class="-vprofile-frame41">
+                        <span class="-vprofile-text1">
+                          Модификатор доступа:
+                        </span>
+                        <span style="color: rgb(160, 160, 160)"> | </span>
+                        <span class="-vprofile-text1">
+                          {% if user.is_authenticated %}
+                            {% if user.is_superuser %}
+                              <p>Администратор</p>
+                            {% else %}
+                              <p>Обычный пользователь</p>
+                            {% endif %}
+                          {% else %}
+                              <p style="color:#353535;"> </p>
+                          {% endif %}  
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div></div>
+                  <br>
+                  <img
+                    alt="Devider1712"
+                    src="{% static "png/devider1786-vt79-200h.png" %}"
+                    class="-vprofile-devider"
+                  />
+                  <div class="-vprofile-frame18">
+                    <div class="-vprofile-frame17">
+                      <div class="-vprofile-frame142">
+                        <form>
+                          <button class="-vprofile-button", formaction="{% url 'login' %}">
+                            Войти
+                          </button>
+                        </form>
+                      </div>
+                      <div class="-vprofile-frame142">
+                        <form>
+                          <button class="-vprofile-button", formaction="{% url 'logout' %}">
+                            Выйти   
+                          </button>
+                        </form>
+                      </div>
+                      <div class="-vprofile-frame142">
+                        <form>
+                          <button class="-vprofile-button", formaction="{% url 'register' %}">
+                            Зарегистрироваться
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <form>
+                  <button class="-vprofile-btn", formaction="{% url 'text' %}">
+                    {% comment %} Назад {% endcomment %}
+                    <img
+                      src="{% static "svg/codesandbox1819-zhyfd.svg" %}"
+                      alt="codesandbox1819"
+                      class="mmtslider-codesandbox"
+                    />
+                  </button>
+                </form>
+                <h1 style="opacity: 0"> ТЕСТ ТЕСТ КТО ЗДЕСЬ </h1>
+              </div>
+            </div>
+          {% endblock %}
+          

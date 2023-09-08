@@ -1,0 +1,102 @@
+.mmtmainframe-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.mmtmainframe-cvmainframe {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  background-color: rgba(7, 7, 7, 1);
+}
+.mmtmainframe-header {
+  height: 50px;
+  display: flex;
+  padding: 7px 20px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmtmainframe-menubtn {
+  width: 32px;
+  height: 33px;
+}
+.mmtmainframe-userbtn {
+  width: 28px;
+  height: 26px;
+}
+.mmtmainframe-mainfr {
+  gap: 40px;
+  height: 910px;
+  display: flex;
+  padding: 15px 0;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+.mmtmainframe-footer {
+  display: flex;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.mmtmainframe-footerframe {
+  gap: 150px;
+  height: 50px;
+  display: flex;
+  padding: 0 20px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmtmainframe-compassbtn {
+  gap: 10px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  padding: 9px 7px;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmtmainframe-home {
+  width: 24px;
+  height: 24px;
+}
+.mmtmainframe-filesbtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  padding: 0 2px;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 1);
+}
+.mmtmainframe-fileplus {
+  width: 24px;
+  height: 24px;
+}
+.mmtmainframe-githubbtn {
+  width: 40px;
+  height: 40px;
+}

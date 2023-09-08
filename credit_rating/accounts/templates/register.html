@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>ММТ-ГИС. Регистрация</title>
+    <meta property="og:title" content="Register - exported project" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <link type="image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="shortcut icon">
+    <link type="Image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="icon">
+  </head>
+  <body>
+    <div>
+      <link href="{% static "css/register.css" %}" rel="stylesheet" />
+
+      <div class="register-container">
+        <div class="register-container01">
+          <div class="register-container02">
+            <div class="register-container03">
+              <h1 class="register-text">Добро пожаловать</h1>
+            </div>
+            <form action="" method="post">
+              {% csrf_token %}
+              <div class="register-container04">
+                <div class="register-form">
+                  <span class="register-text01">Имя пользователя*</span>
+                  <input
+                    name="username"
+                    type="text"
+                    placeholder="Ваше имя пользователя"
+                    class="register-textinput input"
+                  />
+                </div>
+              </div>
+              <br>
+              <div class="register-container05">
+                <span class="register-text02">
+                  <span class="register-text03">
+                    * Пароль не должен быть слишком похож на другую вашу личную
+                    информацию.
+                  </span>
+                  <br class="register-text04" />
+                  <br class="register-text05" />
+                  <span class="register-text06">
+                    * Ваш пароль должен содержать как минимум 8 символов.
+                  </span>
+                  <br />
+                  <br class="register-text08" />
+                  <span class="register-text09">
+                    * Пароль не должен быть слишком простым и распространенным.
+                  </span>
+                  <br />
+                  <br class="register-text11" />
+                  <span class="register-text12">
+                    * Пароль не может состоять только из цифр.
+                  </span>
+                </span>
+              </div>
+              <br>
+              <div class="register-container06">
+                <div class="register-form1">
+                  <span class="register-text13">Адрес электронной почты</span>
+                  <input
+                    name="email"
+                    type="text"
+                    placeholder="Ваш адрес электронной почты"
+                    class="register-textinput1 input"
+                  />
+                </div>
+              </div>
+              <div class="register-container07">
+                <div class="register-form2">
+                  <span class="register-text14">Пароль*</span>
+                  <input
+                    name="password1"
+                    type="password"
+                    placeholder="Ваш пароль"
+                    class="register-textinput2 input"
+                  />
+                </div>
+              </div>
+              <div class="register-container08">
+                <div class="register-form3">
+                  <span class="register-text15">Подтверждение пароля*</span>
+                  <input
+                    name="password2"
+                    type="password"
+                    placeholder="Введите пароль второй раз"
+                    class="register-textinput3 input"
+                  />
+                </div>
+              </div>
+              <div class="register-container09">
+                <div class="register-form4">
+                  <button type="submit" class="register-button button">
+                    Регистрация
+                  </button>
+                </div>
+              </div>
+              <div class="register-container10">
+                <form class="register-form5">
+                  <button class="register-button1", formaction="{% url 'login' %}">
+                    Уже есть аккаунт? Войти?
+                  </button>
+                </form>
+              </div>
+            </form>
+                {% comment %} <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Добро пожаловать в AddressChecked</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Регистрация</button>
+                    </div>
+                </form>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        Уже есть аккаунт? <a class="ml-2" href="/login">Вход</a>
+                    </small>
+                </div> {% endcomment %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

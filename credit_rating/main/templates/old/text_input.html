@@ -1,0 +1,189 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>ММТ-ГИС. Текст</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}
+      body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}
+      p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,
+      figcaption {  margin: 0;  padding: 0;}
+      button {  background-color: transparent;}
+      button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}
+      button,select {  text-transform: none;}
+      button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}
+      button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}
+      button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}
+      input {  padding: 2px 4px;}
+      img {  display: block;}
+      html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <link type="image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="shortcut icon">
+    <link type="Image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="icon">
+  </head>
+  <body>
+    <div>
+      <link href="{% static "css/index.css" %}" rel="stylesheet" />
+
+      <div class="-vmainscreen-container">
+        <div class="-vmainscreen--vmainscreen">
+          <div class="-vmainscreen-header">
+            <form>
+              <button class="test-btn-class", formaction="{% url 'project-menu' %}">
+                <img
+                  src="{% static "svg/menubtn1885-d7e7.svg" %}"
+                  alt="menubtn5126"
+                  class="-vmainscreen-menubtn"
+                />
+              </button>
+            </form>
+            <form>
+              <button class="test-btn-class", formaction="{% url 'profile' %}">
+                <img
+                  alt="userbtn1747"
+                  src="{% static "svg/userbtn1747-8s7.svg" %}"
+                  class="-vprofile-userbtn"
+                />
+              </button>
+            </form>
+          </div>
+          <div class="-vmainscreen-mainfr">
+            <form>
+              <button class="-vmainscreen-mmmenu", formaction="{% url 'megamen-team-page' %}">
+                <span class="-vmainscreen-text">
+                  <span>MEGAMEN TEAM</span>
+                </span>
+              </button>
+            </form>
+            <div class="-vmainscreen-elemsframe">
+              <form class="-vmainscreen-frame37" action='' method="post">
+                {% csrf_token %}
+                <div>
+                  <input
+                      name="text"
+                      type="text"
+                      placeholder="Введите ваш адресс"
+                      class="-vmainscreen-textinput"
+                  />
+                </div>
+                <br>
+                <div>
+                  <button class="-vmainscreen-tomodbtn", formaction="{% url 'text' %}">
+                    <span class="-vmainscreen-text13">
+                      <span>▶</span>
+                    </span>
+                  </button>
+                </div>
+              </form>
+              <div class="-vmainscreen-container1">
+                
+                <ul class="-vmainscreen-ul list">
+                  <li class="-vmainscreen-li list-item"><span>
+                    {% if address %}
+                      {{ address }};
+                      <br>
+                      <br>
+                      <p>Шанс успеха:</p>
+                      {{ chance }};   
+                    {% else %}
+                      <br>  
+                    {% endif %}  
+                  </span></li>
+                </ul>     
+              </div>
+              <div class="-vmainscreen-fileframe">
+                <div class="-vmainscreen-fileselem">
+                  <form>
+                    <button class="-vmainscreen-chartviewbtn", formaction="{% url 'file' %}">
+                      <span class="-vmainscreen-text15">
+                        <span>Загрузить ваш файл</span>
+                      </span>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="-vmainscreen-frame37">
+                <span class="-vmainscreen-text17">
+                    <span class="-vmainscreen-text18">
+                      Вы находитесь в разделе работы с текстовым запросом, чтобы проверить название улицы - просто
+                      введите ее 
+                    </span>
+                    <br>
+                    <span class="-vmainscreen-text19">
+                        в верхнее поле
+                    </span>
+                    <span class="-vmainscreen-text20">
+                      и нажмите
+                    </span>
+                    <span class="-vmainscreen-text21">
+                        Enter
+                    </span>
+                    <span>
+                        на вашей клавиатуре. 
+                    </span>
+                    <br>
+                    <br>
+                    <span>
+                        Для работы с файлами - нажмите кнопку Загрузить ваш файл
+                        {{object.text}} {{object.corrected_text}}
+                    </span>
+                  </span>
+              </div>
+            </div>
+          </div>
+          <div class="-vmainscreen-footer">
+            <div class="-vmainscreen-footerframe">
+              <form>
+                <button class="safaribtn", formaction="https://www.google.com/">
+                  <img
+                    src="{% static "svg/compassbtn1874-oqd.svg" %}"
+                    alt="compassbtn1874"
+                    class="-vmainscreen-compassbtn"
+                  />
+                </button>
+              </form>
+              <form>
+                <button class="ghbtn", formaction="https://github.com/mireaMegaman/hackaton/">
+                  <img
+                    src="{% static "svg/githubbtn1877-uk5.svg" %}"
+                    alt="githubbtn1877"
+                    class="-vmainscreen-githubbtn"
+                  />
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

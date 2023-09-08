@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>{% block pg_title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <link type="image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="shortcut icon">
+    <link type="Image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="icon">
+  </head>
+  <body>
+    <div>
+      <link href="{% static "css/mmtmainframe.css" %}" rel="stylesheet" />
+      <div class=" {% block bgr_cont %} {% endblock %} ">
+        <div class="mmtmainframe-cvmainframe">
+          <div class="mmtmainframe-header">
+            <form>
+              <button class="test-btn-class", formaction="{% url 'project-menu' %}">
+                <img
+                  src="{% static "svg/menubtni208-kqje.svg" %}"
+                  alt="menubtnI208"
+                  class="mmtmainframe-menubtn"
+                />
+              </button>
+            </form>
+            <form>
+              <button class="test-btn-class", formaction="{% url 'profile' %}">
+                <img
+                  alt="userbtnI208"
+                  src="{% static "svg/userbtni208-fyy.svg" %}"
+                  class="mmtmainframe-userbtn"
+                />
+              </button>
+            </form>
+          </div>
+
+
+          {% block pg_context %} {% endblock %}
+
+
+          <div class="mmtmainframe-footer">
+            <div class="mmtmainframe-footerframe">
+              <form>
+                <button class="mmtmainframe-compassbtn", formaction="{% url 'text' %}">
+                  <img
+                    src="{% static "svg/homei208-3ki.svg" %}"
+                    alt="homeI208"
+                    class="mmtmainframe-home"
+                  />
+                </button>
+              </form>
+              <form>
+                <button class="mmtmainframe-filesbtn", formaction="{% url 'file' %}">
+                  <img
+                    src="{% static "svg/fileplusi208-ptll.svg" %}"
+                    alt="fileplusI208"
+                    class="mmtmainframe-fileplus"
+                  />
+                </button>
+              </form>              
+              <form>
+                <button class="ghbtn", formaction="https://github.com/mireaMegaman/hackaton/">
+                  <img
+                    src="{% static "svg/githubbtni208-ac4.svg" %}"
+                    alt="githubbtnI208"
+                    class="mmtmainframe-githubbtn"
+                  />
+                </button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

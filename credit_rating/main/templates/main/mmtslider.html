@@ -1,0 +1,297 @@
+{% extends 'main/mmtmainframe.html' %}
+{% load static %}
+{% block pg_title %}
+  Справка (MMT)
+{% endblock %}
+{% block bgr_cont %} mmtslider-container {% endblock %}
+
+
+          {% block pg_context %}
+            <link href="{% static "css/mmtslider.css" %}" rel="stylesheet" />
+            <div class="mmtslider-slidermenu">
+              <div class="mmtslider-welcome">
+                <span class="mmtslider-text">
+                  <span>Добро пожаловать в ММТ-ПР!</span>
+                </span>
+              </div>
+              <div class="mmtslider-fistfield">
+                <div class="mmtslider-frame35">
+                  <span class="mmtslider-text02"><span>Здесь вы можете:</span></span>
+                </div>
+                <div class="mmtslider-pointsframe1">
+                  <div class="mmtslider-textframep1">
+                    <span class="mmtslider-text17">
+                      <span>
+                        <span>
+                          1. Ознакомьтесь с техническим заданием наших партнеров;
+                        </span>
+                        <br />
+                        <span>
+                          2. Посмотрете инструкцию по использованию приложения;
+                        </span>
+                        <br />
+                        <span>
+                          3. Обратитесь к документации;
+                        </span>
+                        <br />
+                        <span>
+                          4. Перейдите на внешние ссылки нашей команды (например, GitHub или
+                          Телеграмм);
+                        </span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <img
+                src="{% static "png/devider1786-vt79-200h.png" %}"
+                alt="Devider1771"
+                class="mmtslider-devider"
+              />
+              <div class="mmtslider-secfield">
+                <div class="mmtslider-frame36">
+                  <span class="mmtslider-text28">
+                    <span class="mmtslider-text29">Наши партнеры "Центральный Банк Российской Федерации"</span>
+                    <span class="mmtslider-text30">и их техническое задание:</span>
+                  </span>
+                </div>
+                <div class="mmtslider-pointsframe2">
+                  <div class="mmtslider-textframep2">
+                    <span class="mmtslider-text40">
+                      <span>
+                        <span>1. Построить модель, которая определит взаимосвязь кредитного рейтинга и пресс-релиза, написанного кредитным рейтинговым агентством..</span>
+                        <br />
+                        <span>2. Поработать с наборами данных с пресс-релизами разных форматов и произвольно введенными пресс-релизами.</span>
+                        <br />
+                        <span>3. Увидеть решение проблемы определения рейтинга и ключевых слов</span>
+                        <br />
+                        <span>4. Проанализировать полезность модели для решения вопросов совершенствования методов определения определения рейтинга и ключевых слов в пресс-релизах различных фирм.</span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <img
+                src="{% static "png/devider1786-vt79-200h.png" %}"
+                alt="Devider1786"
+                class="mmtslider-devider1"
+              />
+              <div class="mmtslider-mainmenubtns">
+                <form>
+                  <button class="mmtslider-docsbtn", formaction="https://github.com/mireaMegaman/spb_hack/tree/django_project#readme">
+                    <img
+                      src="{% static "svg/filetext1789-r2cc.svg" %}"
+                      alt="filetext1789"
+                      class="mmtslider-filetext"
+                    />
+                    <span class="mmtslider-text49"><span>Документация</span></span>
+                  </button>
+                  <button class="mmtslider-repbtn", formaction="https://github.com/mireaMegaman/spb_hack/tree/django_project">
+                    <img
+                      src="{% static "svg/github1797-2vpm.svg" %}"
+                      alt="github1797"
+                      class="mmtslider-github"
+                    />
+                    <span class="mmtslider-text51"><span>Репозиторий</span></span>
+                  </button>
+                  <button class="mmtslider-repbtn1", formaction="https://www.youtube.com/channel/UC5qC_I5o2aatXDSxTHbjxzg">
+                    <img
+                      src="{% static "svg/youtube2083-w15n.svg" %}"
+                      alt="send1801"
+                      class="mmtslider-send"
+                    />
+                    <span class="mmtslider-text53"><span>YouTube</span></span>
+                  </button>
+                </form>
+              </div>
+              <img
+                src="{% static "png/devider1786-vt79-200h.png" %}"
+                alt="Devider1810"
+                class="mmtslider-devider2"
+              />
+              <div class="mmtslider-lastfield">
+                <div class="mmtslider-frame33">
+                  <span class="mmtslider-text57">
+                    <span class="mmtslider-text58">Особая</span>
+                    <span class="mmtslider-text59">благодарность</span>
+                  </span>
+                </div>
+                <div class="mmtslider-frame32">
+                  <span class="mmtslider-text61">
+                    <span>
+                      <span>1.</span>
+                      <br />
+                      <span>2.</span>
+                      <br />
+                      <span>3.</span>
+                      <br />
+                    </span>
+                  </span>
+                  <div class="mmtslider-frame34">
+                    <span class="mmtslider-text74">
+                      <span>
+                        <span>Цифровому прорыву;</span>
+                        <br>
+                        <span>Центральному Банку Российской Федерации;</span>
+                        <br>
+                        <span>Нашим кураторам на этом этапе;</span>
+                        <br>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <form>
+                <button class="mmtslider-backbtn", formaction="{% url 'text' %}">
+                  <img
+                      src="{% static "svg/codesandbox1819-zhyfd.svg" %}"
+                    alt="codesandbox1819"
+                    class="mmtslider-codesandbox"
+                  />
+                </button>
+              </form>
+            </div>
+          {% endblock %}
+{% comment %} <link href="{% static "css/mmtslider.css" %}" rel="stylesheet" />
+            <div class="mmtslider-slidermenu">
+              <div class="mmtslider-welcome">
+                <span class="mmtslider-text">
+                  <span>Welcome to the MMT-GIS!</span>
+                </span>
+              </div>
+              <div class="mmtslider-fistfield">
+                <div class="mmtslider-ffstart">
+                  <span class="mmtslider-text02">
+                    <span>Здесь вы можете:</span>
+                  </span>
+                </div>
+                <div class="mmtslider-pointsframe1">
+                  <div class="mmtslider-nums">
+                    <span class="mmtslider-text04">
+                      <span>
+                        <span>1.</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>2.</span>
+                        <br />
+                        <span>3.</span>
+                        <br />
+                        <span>4.</span>
+                        <br />
+                        <span></span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="mmtslider-textframep1">
+                    <span class="mmtslider-text17">
+                      <span>
+                        <span>
+                          Ознакомьтесь с техническим заданием наших партнеров
+                        </span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>
+                          Посмотреть инструкцию по использованию приложения
+                        </span>
+                        <br />
+                        <span>Обратитесь к документации</span>
+                        <br />
+                        <span>
+                          Перейдите на внешние ссылки нашей команды (например,
+                          GitHub или Telegram)
+                        </span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <img
+                alt="Devider1771"
+                src="{% static "png/devider1786-vt79-200h.png" %}"
+                class="mmtslider-devider"
+              />
+              <div class="mmtslider-secfield">
+                <div class="mmtslider-frame36">
+                  <span class="mmtslider-text28">
+                    Техническое задание наших партнеров -&nbsp;Центрального банка
+                    Российской Федерации:
+                  </span>
+                </div>
+                <div class="mmtslider-pointsframe2">
+                  <div class="mmtslider-frame39">
+                    <span class="mmtslider-text29">
+                      <span>
+                        <span>1.</span>
+                        <br />
+                        <span>2.</span>
+                        <br />
+                        <span>3.</span>
+                        <br />
+                        <span>4.</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="mmtslider-textframep2">
+                    <span class="mmtslider-text38">
+                      <span>
+                        <span>*Первый пункт*</span>
+                        <br />
+                        <span>*Второй пункт*</span>
+                        <br />
+                        <span>*Третий пункт*</span>
+                        <br />
+                        <span>*Четвертый пункт*</span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <img
+                alt="Devider1786"
+                src="{% static "png/devider1786-vt79-200h.png" %}"
+                class="mmtslider-devider1"
+              />
+              <div class="mmtslider-mainmenubtns">
+                <div class="mmtslider-docsbtn">
+                  <img
+                    alt="filetext1789"
+                    src="{% static "svg/filetext1789-r2cc.svg" %}"
+                    class="mmtslider-filetext"
+                  />
+                  <span class="mmtslider-text47"><span>Документация</span></span>
+                </div>
+                <div class="mmtslider-repbtn">
+                  <img
+                    alt="github1797"
+                    src="{% static "svg/github1797-2vpm.svg" %}"
+                    class="mmtslider-github"
+                  />
+                  <span class="mmtslider-text49"><span>Репозиторий</span></span>
+                </div>
+                <div class="mmtslider-repbtn1">
+                  <img
+                    alt="youtube2083"
+                    src="{% static "svg/youtube2083-w15n.svg" %}"
+                    class="mmtslider-youtube"
+                  />
+                  <span class="mmtslider-text51">
+                    <span>Наш Ютуб канал</span>
+                  </span>
+                </div>
+              </div>
+              <img
+                alt="Devider1810"
+                src="{% static "png/devider1786-vt79-200h.png" %}"
+                class="mmtslider-devider2"
+              />
+              <div class="mmtslider-lastfield"></div>
+              <div class="mmtslider-backbtn">
+                <img
+                  alt="codesandbox1819"
+                  src="{% static "svg/codesandbox1819-zhyfd.svg" %}"
+                  class="mmtslider-codesandbox"
+                />
+              </div>
+            </div> {% endcomment %}
