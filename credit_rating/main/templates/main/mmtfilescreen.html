@@ -73,29 +73,29 @@
                               </svg>
                             </div>
                           </div>
-                          <ul data-thq="thq-dropdown-list" class="mmtfilescreen-dropdown-list">
+                          <select name="output_format" data-thq="thq-dropdown-list" class="mmtfilescreen-dropdown-list">
                             <li data-thq="thq-dropdown" class="mmtfilescreen-dropdown list-item">
                               <div data-thq="thq-dropdown-toggle" class="mmtfilescreen-dropdown-toggle1">
-                                <span class="mmtfilescreen-text1107">
+                                <option class="mmtfilescreen-text1107">
                                   csv
-                                </span>
+                                </option>
                               </div>
                             </li>
                             <li data-thq="thq-dropdown" class="mmtfilescreen-dropdown1 list-item">
                               <div data-thq="thq-dropdown-toggle" class="mmtfilescreen-dropdown-toggle2" >
-                                <span class="mmtfilescreen-text1108">
+                                <option class="mmtfilescreen-text1108">
                                   xlsx
-                                </span>
+                                </option>
                               </div>
                             </li>
                             <li data-thq="thq-dropdown" class="mmtfilescreen-dropdown2 list-item">
                               <div data-thq="thq-dropdown-toggle" class="mmtfilescreen-dropdown-toggle3">
-                                <span class="mmtfilescreen-text1109">
+                                <option class="mmtfilescreen-text1109">
                                   txt
-                                </span>
+                                </option>
                               </div>
                             </li>
-                          </ul>
+                          </select>
                         </div>
                       </div>
                     </div>
@@ -110,77 +110,79 @@
                   </span>
                 </div>
               </div>
-              <div class="mmtfilescreen-elemsframe1">
-                <div class="mmtfilescreen-fileframe2">
-                  <div class="mmtfilescreen-answerbig">
-                    <span class="mmtfilescreen-text07">
-                      Результат работы модели
-                    </span>
-                    <div class="mmtfilescreen-contextcolumn">
-                      <div class="mmtfilescreen-classresp">
-                        <div class="mmtfilescreen-respfr">
-                          <div class="mmtfilescreen-rowresp">
-                            <div class="mmtfilescreen-container1">
-                              <span class="mmtfilescreen-text108">Категория</span>
+              {% if ans_simple %}
+                <div class="mmtfilescreen-elemsframe1">
+                  <div class="mmtfilescreen-fileframe2">
+                    <div class="mmtfilescreen-answerbig">
+                      <span class="mmtfilescreen-text07">
+                        Результат работы модели
+                      </span>
+                      <div class="mmtfilescreen-contextcolumn">
+                        <div class="mmtfilescreen-classresp">
+                          <div class="mmtfilescreen-respfr">
+                            <div class="mmtfilescreen-rowresp">
+                              <div class="mmtfilescreen-container1">
+                                <span class="mmtfilescreen-text108">Категория</span>
+                              </div>
+                              <div class="mmtfilescreen-container2">
+                                <span class="mmtfilescreen-text09">
+                                  <span>Уровень</span>
+                                  <br />
+                                  <span>рейтинга</span>
+                                </span>
+                              </div>
                             </div>
-                            <div class="mmtfilescreen-container2">
-                              <span class="mmtfilescreen-text09">
-                                <span>Уровень</span>
-                                <br />
-                                <span>рейтинга</span>
-                              </span>
+                            <div class="mmtfilescreen-rowresp2">
+                              <div class="mmtfilescreen-container3">
+                                <span class="mmtfilescreen-text13">
+                                  ml kat 1
+                                </span>
+                              </div>
+                              <div class="mmtfilescreen-container4">
+                                <span class="mmtfilescreen-text116">
+                                  ml kat 2
+                                </span>
+                              </div>
                             </div>
                           </div>
-                          <div class="mmtfilescreen-rowresp2">
-                            <div class="mmtfilescreen-container3">
-                              <span class="mmtfilescreen-text13">
-                                ml kat 1
-                              </span>
-                            </div>
-                            <div class="mmtfilescreen-container4">
-                              <span class="mmtfilescreen-text116">
-                                ml kat 2
-                              </span>
+                        </div>
+                        <div class="mmtfilescreen-text1">
+                          <span class="mmtfilescreen-text17">
+                            Визуальное выделение слов:
+                          </span>
+                        </div>
+                        <div class="mmtfilescreen-htmlresp">
+                          <div class="mmtfilescreen-respfr1">
+                            <div class="mmtfilescreen-rowresp3">
+                              <span>'html-page-context'</span>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="mmtfilescreen-text1">
-                        <span class="mmtfilescreen-text17">
-                          Визуальное выделение слов:
-                        </span>
-                      </div>
-                      <div class="mmtfilescreen-htmlresp">
-                        <div class="mmtfilescreen-respfr1">
-                          <div class="mmtfilescreen-rowresp3">
-                            <span>'html-page-context'</span>
-                          </div>
+                        <div class="mmtfilescreen-text11">
+                          <span class="mmtfilescreen-text19">Ключевые слова:</span>
                         </div>
-                      </div>
-                      <div class="mmtfilescreen-text11">
-                        <span class="mmtfilescreen-text19">Ключевые слова:</span>
-                      </div>
-                      <div class="mmtfilescreen-htmlresp1">
-                        <div class="mmtfilescreen-respfr2">
-                          <div class="mmtfilescreen-rowresp4">
-                            <ul class="mmtfilescreen-ul list">
-                              <li class="mmtfilescreen-li list-item">
-                                <span>Text</span>
-                              </li>
-                              <li class="mmtfilescreen-li1 list-item">
-                                <span>Text</span>
-                              </li>
-                              <li class="mmtfilescreen-li2 list-item">
-                                <span>Text</span>
-                              </li>
-                            </ul>
+                        <div class="mmtfilescreen-htmlresp1">
+                          <div class="mmtfilescreen-respfr2">
+                            <div class="mmtfilescreen-rowresp4">
+                              <ul class="mmtfilescreen-ul list">
+                                <li class="mmtfilescreen-li list-item">
+                                  <span>Text</span>
+                                </li>
+                                <li class="mmtfilescreen-li1 list-item">
+                                  <span>Text</span>
+                                </li>
+                                <li class="mmtfilescreen-li2 list-item">
+                                  <span>Text</span>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              {% endif %}
               <div class="mmtfilescreen-hackatt">
                 <img
                   alt="elem6I208"
