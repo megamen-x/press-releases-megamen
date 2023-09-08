@@ -35,7 +35,8 @@
   height: 26px;
 }
 .mmtmegamen-mainfr {
-  height: 1633px;
+  min-height: 1700px;
+  height: auto;
   display: flex;
   padding: 15px 0;
   align-self: stretch;

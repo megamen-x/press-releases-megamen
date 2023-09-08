@@ -37,6 +37,7 @@
 }
 .mmttextscreen-mainfr {
   gap: 55px;
+  min-height: 100vh;
   height: auto;
   display: flex;
   padding: 30px 30px 30px 30px;

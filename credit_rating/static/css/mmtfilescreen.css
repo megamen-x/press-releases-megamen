@@ -38,6 +38,7 @@
 .mmtfilescreen-mainfr {
   gap: 55px;
   /* height: 1010px; */
+  min-height: 100vh;
   height: auto;
   display: flex;
   padding: 15px 0;

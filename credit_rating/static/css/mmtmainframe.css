@@ -36,7 +36,8 @@
 }
 .mmtmainframe-mainfr {
   gap: 40px;
-  height: 910px;
+  min-height: 100vh;
+  height: auto;
   display: flex;
   padding: 15px 0;
   align-self: stretch;

@@ -23,7 +23,8 @@
 }
 .mmtslider-slidermenu {
   gap: 10px;
-  height: 910px;
+  height: auto;
+  min-height: 100vh;
   display: flex;
   padding: 10px;
   overflow: hidden;
