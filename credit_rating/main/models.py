@@ -9,7 +9,7 @@ class CustomUser(AbstractUser):
 
 class Rating(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True)
-    text = models.CharField(max_length=250)
+    text = models.TextField()
     answer = models.CharField(max_length=250)
 
 

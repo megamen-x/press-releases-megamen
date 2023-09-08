@@ -43,7 +43,7 @@
                       </div>
                     </div>
                     <div class="mmttextscreen-fileconfelem">
-                      <button class="mmttextscreen-dfframebtn", formaction="{% url 'text' %}">
+                      <button class="mmttextscreen-dfframebtn", type='submit', formaction="{% url 'text' %}">
                         <img
                           alt="checkcircleI208"
                           src="{% static "svg/checkcirclei208-g49t.svg" %}"
@@ -53,16 +53,18 @@
                           <span>Принять</span>
                         </span>
                       </button>
-                      <button class="mmttextscreen-chartviewbtn", formaction="{% url 'text' %}">
-                        <img
-                          alt="slashI208"
-                          src="{% static "svg/slashi208-sqhg.svg" %}"
-                          class="mmttextscreen-slash"
-                        />
-                        <span class="mmttextscreen-text06">
-                          <span>Отменить</span>
-                        </span>
-                      </button>
+                      <!-- <form>
+                        <button class="mmttextscreen-chartviewbtn",  formaction="{% url 'text' %}">
+                          <img
+                            alt="slashI208"
+                            src="{% static "svg/slashi208-sqhg.svg" %}"
+                            class="mmttextscreen-slash"
+                          />
+                          <span class="mmttextscreen-text06">
+                            <span>Отменить</span>
+                          </span>
+                        </button>
+                      </form> -->
                     </div>
                   </div>
                 </form>

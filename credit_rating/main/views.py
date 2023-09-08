@@ -58,11 +58,13 @@ class RatingView(View):
     def get(self, request):
         form_text = RatingForm()
         self.context['form_text'] = form_text
-        self.context['result'] = None
+        self.context['answer'] = None
+        self.context['key_words'] = None
         return render(request, 'main/mmttextscreen.html', context=self.context)
 
     def post(self, request):
         form_text = RatingForm(request.POST)
+        print(request.POST)
         if form_text.is_valid():
             object = form_text.save(commit=False)
             if request.user.is_authenticated:
@@ -74,7 +76,6 @@ class RatingView(View):
             self.context['key_words'] = key_words
             for el in key_words:
                 object.keywords_set.create(word=el)
-            print(self.context['answer'], self.context['key_words'])
             return render(request, 'main/mmttextscreen.html', context=self.context)
         else:
             return render(request, 'main/mmttextscreen.html', context=self.context)
