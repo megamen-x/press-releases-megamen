@@ -7,7 +7,9 @@
 {% block custom_style %}
 <style>
     [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
-      background-color: rgba(100, 100, 100, 1);
+      background-color: rgba(40, 40, 40, 1);
+      border-color: rgba(40, 40, 40, 1);
+      padding: 4px;
     }
     [data-thq="thq-dropdown"]:hover > div [data-thq="thq-dropdown-arrow"] {
       transform: rotate(90deg);
@@ -63,11 +65,6 @@
                         <div data-thq="thq-dropdown" class="mmtfilescreen-thq-dropdown list-item">
                           <button data-thq="thq-dropdown-toggle" class="mmtfilescreen-dropdown-toggle">
                             <span class="mmtfilescreen-text1106">Нужный формат файла</span>
-                            {% comment %} <div data-thq="thq-dropdown-arrow" class="mmtfilescreen-dropdown-arrow">
-                              <svg viewBox="0 0 1024 1024" class="mmtfilescreen-icon">
-                                <path d="M426 726v-428l214 214z"></path>
-                              </svg>
-                            </div> {% endcomment %}
                           </button>
                           <br>
                           <select name="output_format" data-thq="thq-dropdown-list" class="mmtfilescreen-dropdown-list">

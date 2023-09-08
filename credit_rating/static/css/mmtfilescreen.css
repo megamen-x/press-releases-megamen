@@ -136,18 +136,20 @@
   text-decoration: none;
 }
 .mmtfilescreen-fileselem {
-  gap: 8px;
-  height: 40px;
+  gap: 15px;
+  padding: 10px;
+  height: auto;
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  flex-direction: column;
   justify-content: center;
 }
 .mmtfilescreen-chartviewbtn1 {
   gap: 10px;
   height: 100%;
   display: flex;
-  padding: 12px 12px;
+  padding: 8px 10px;
   overflow: hidden;
   align-self: stretch;
   align-items: center;
@@ -158,7 +160,7 @@
 }
 .mmtfilescreen-chartviewbtn1:hover {
   background-color: rgb(40, 40, 40);
-  padding: 4px 15px;
+  padding: 10px 10px;
 }
 .mmtfilescreen-deviceupbtn {
   gap: 10px;
@@ -181,7 +183,7 @@
 .mmtfilescreen-text04 {
   color: rgba(82, 217, 169, 1);
   height: auto;
-  font-size: 14px;
+  font-size: 16px;
   font-style: Regular;
   text-align: center;
   font-family: Inter;
@@ -193,7 +195,7 @@
 .mmtfilescreen-dropdwn-btn {
   gap: 10px;
   width: auto;
-  height: 200px;
+  height: 90px;
   display: flex;
   /* padding: 5px 5px; */
   overflow: hidden;
@@ -207,7 +209,7 @@
   cursor: pointer;
   display: inline-block;
   position: relative;
-  border-radius: var(--dl-radius-radius-radius2);
+  border-radius: 5px;
 }
 .mmtfilescreen-dropdown-toggle {
   background-color: rgba(30, 30, 30, 1);
@@ -222,44 +224,41 @@
   gap: 5px;
   margin-bottom: 10px;
 }
+.mmtfilescreen-dropdown-toggle:hover {
+  background-color: rgba(40, 40, 40, 1);
+  padding: 14px;
+}
 .mmtfilescreen-text1106 {
   color: #53daa9;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   text-align: center;
   font-weight: 500;
   margin-right: 4px;
   vertical-align: middle;
 }
-.mmtfilescreen-dropdown-arrow {
-  transition: 0.3s;
-  color: #53daa9;
+.select-selected {
+  color: #ececec;
 }
-.mmtfilescreen-icon {
-  background-color: #53daa9;
-  border-radius: 5px;
-  color: #53daa9;
-  width: 15px;
-  height: 15px;
-  margin-top: auto;
-  transition: 0.3s;
-  margin-bottom: auto;
+.mmtfilescreen-dropdown-list select {
+  display: none;
 }
 .mmtfilescreen-dropdown-list {
-  background-color: rgba(40, 40, 40, 1);
+  color: #ececec;
+  background-color: rgba(30, 30, 30, 1);
   left: 0%;
   width: max-content;
   display: flex;
   z-index: 100;
   position: absolute;
   min-width: 100%;
+  padding: 3px;
   align-items: stretch;
-  border-color: #D9D9D9;
-  border-width: 1px;
-  border-radius: var(--dl-radius-radius-radius4);
+  border-color: rgba(30, 30, 30, 1);
+  border-width: 3px;
+  border-radius: 4px;
   flex-direction: column;
   list-style-type: none;
-  background-color: var(--dl-color-gray-white);
   list-style-position: inside;
   transition: 0.7s;
 }
@@ -270,8 +269,8 @@
   border-radius: var(--dl-radius-radius-radius2);
 }
 .mmtfilescreen-dropdown-toggle1 {
-  fill: #595959;
-  color: #595959;
+  fill: #ececec;
+  color: #ececec;
   width: 100%;
   display: inline-flex;
   transition: 0.3s;
@@ -285,9 +284,10 @@
 .mmtfilescreen-dropdown-toggle1:hover {
   fill: #fff;
   color: #fff;
-  background-color: #595959;
+  background-color: #ececec;
 }
 .mmtfilescreen-text1107 {
+  color: #a0a0a0;
   width: 100%;
   cursor: pointer;
   display: flex;
@@ -302,8 +302,8 @@
   border-radius: var(--dl-radius-radius-radius2);
 }
 .mmtfilescreen-dropdown-toggle2 {
-  fill: #595959;
-  color: #595959;
+  fill: #ececec;
+  color: #ececec;
   width: 100%;
   display: inline-flex;
   transition: 0.3s;
@@ -317,10 +317,11 @@
 .mmtfilescreen-dropdown-toggle2:hover {
   fill: #fff;
   color: #fff;
-  background-color: #595959;
+  background-color: #ececec;
 }
 .mmtfilescreen-text1108 {
   width: 100%;
+  color: #a0a0a0;
   cursor: pointer;
   display: flex;
   font-size: 14px;
@@ -334,8 +335,8 @@
   border-radius: var(--dl-radius-radius-radius2);
 }
 .mmtfilescreen-dropdown-toggle3 {
-  fill: #595959;
-  color: #595959;
+  fill: #ececec;
+  color: #ececec;
   width: 100%;
   display: inline-flex;
   transition: 0.3s;
@@ -349,10 +350,11 @@
 .mmtfilescreen-dropdown-toggle3:hover {
   fill: #fff;
   color: #fff;
-  background-color: #595959;
+  background-color: #ececec;
 }
 .mmtfilescreen-text1109 {
   width: 100%;
+  color: #a0a0a0;
   cursor: pointer;
   display: flex;
   font-size: 14px;
@@ -472,7 +474,7 @@
 .mmtfilescreen-container1 {
   flex: 0 0 auto;
   width: 150px;
-  height: var(--dl-size-size-small);
+  height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
