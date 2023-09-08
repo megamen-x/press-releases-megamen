@@ -33,6 +33,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
       data-tag="font"
     />
+    {% block custom_style %} {% endblock %}
     <link rel="stylesheet" href="{% static "css/style.css" %}" />
     <link type="image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="shortcut icon">
     <link type="Image/x-icon" href="{% static "png/Logo_MMT.png" %}" rel="icon">
@@ -70,7 +71,7 @@
           <div class="mmtmainframe-footer">
             <div class="mmtmainframe-footerframe">
               <form>
-                <button class="mmtmainframe-compassbtn", formaction="{% url 'text' %}">
+                <button class="mmtmainframe-compassbtn", formaction="{% url 'file' %}">
                   <img
                     src="{% static "svg/homei208-3ki.svg" %}"
                     alt="homeI208"
@@ -78,7 +79,7 @@
                   />
                 </button>
               </form>
-              <form>
+              {% comment %} <form>
                 <button class="mmtmainframe-filesbtn", formaction="{% url 'file' %}">
                   <img
                     src="{% static "svg/fileplusi208-ptll.svg" %}"
@@ -86,7 +87,7 @@
                     class="mmtmainframe-fileplus"
                   />
                 </button>
-              </form>              
+              </form>               {% endcomment %}
               <form>
                 <button class="ghbtn", formaction="https://github.com/mireaMegaman/nn_hackaton">
                   <img

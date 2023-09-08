@@ -4,6 +4,21 @@
   Работа с файлами (MMT)
 {% endblock %}
 {% block bgr_cont %} mmtfilescreen-container {% endblock %}
+{% block custom_style %}
+<style>
+    [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
+      display: flex;
+      background-color: rgba(40, 40, 40, 1);
+    }
+    [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-toggle"] {
+      display: flex;
+      background-color: rgba(40, 40, 40, 1);
+    }
+    [data-thq="thq-dropdown"]:hover > div [data-thq="thq-dropdown-arrow"] {
+      transform: rotate(90deg);
+    }
+</style>
+{% endblock %}
 
 
           {% block pg_context %}
@@ -48,42 +63,42 @@
                           <span>Загрузить файл</span>
                         </span>
                       </button>
-                      {% comment %} <button class="mmtfilescreen-dfframebtn">
-                        <img
-                          alt="database1720"
-                              src="{% static "svg/database1720-aopp.svg" %}"
-                          class="mmtfilescreen-database"
-                        />
-                        <span class="mmtfilescreen-text06">
-                          <span>Системные файлы</span>
-                        </span>
-                      </button> {% endcomment %}
-                    </div>
-                    {% comment %} <div class="mmtfilescreen-attentionfile">
-                      <span class="mmtfilescreen-text08">
-                        <span>Или же укажите ссылку на архив</span>
-                      </span>
-                    </div> {% endcomment %}
-                    {% comment %} <div class="mmtfilescreen-ur-lframe">
-                      <div class="mmtfilescreen-ur-lbox">
-                        <div class="mmtfilescreen-https">
-                          <span class="mmtfilescreen-text10">
-                            <span>https://</span>
-                          </span>
+                      <div class="mmtfilescreen-dropdwn-btn">
+                        <div data-thq="thq-dropdown" class="mmtfilescreen-thq-dropdown list-item">
+                          <div data-thq="thq-dropdown-toggle" class="mmtfilescreen-dropdown-toggle">
+                            <span class="mmtfilescreen-text1106">Нужный формат файла</span>
+                            <div data-thq="thq-dropdown-arrow" class="mmtfilescreen-dropdown-arrow">
+                              <svg viewBox="0 0 1024 1024" class="mmtfilescreen-icon">
+                                <path d="M426 726v-428l214 214z"></path>
+                              </svg>
+                            </div>
+                          </div>
+                          <ul data-thq="thq-dropdown-list" class="mmtfilescreen-dropdown-list">
+                            <li data-thq="thq-dropdown" class="mmtfilescreen-dropdown list-item">
+                              <div data-thq="thq-dropdown-toggle" class="mmtfilescreen-dropdown-toggle1">
+                                <span class="mmtfilescreen-text1107">
+                                  csv
+                                </span>
+                              </div>
+                            </li>
+                            <li data-thq="thq-dropdown" class="mmtfilescreen-dropdown1 list-item">
+                              <div data-thq="thq-dropdown-toggle" class="mmtfilescreen-dropdown-toggle2" >
+                                <span class="mmtfilescreen-text1108">
+                                  xlsx
+                                </span>
+                              </div>
+                            </li>
+                            <li data-thq="thq-dropdown" class="mmtfilescreen-dropdown2 list-item">
+                              <div data-thq="thq-dropdown-toggle" class="mmtfilescreen-dropdown-toggle3">
+                                <span class="mmtfilescreen-text1109">
+                                  txt
+                                </span>
+                              </div>
+                            </li>
+                          </ul>
                         </div>
                       </div>
-                      <input
-                        name="url"
-                        type="text"
-                        placeholder="www.your-site.com/file/.."
-                        class="mmtfilescreen-textinput"
-                      />
-                      <button class="mmtfilescreen-dfframebtn1" type="submit">
-                        <span class="mmtfilescreen-text12">
-                          <span>Загрузить</span>
-                        </span>
-                      </button>
-                    </div> {% endcomment %}
+                    </div>
                   </div>
                 </form>
                 <div class="mmtfilescreen-attentionfile1">
@@ -182,7 +197,7 @@
                   </span>
                 </div>
                 <form>
-                  <button class="mmtfilescreen-btn", formaction="{% url 'text' %}">
+                  <button class="mmtfilescreen-btn", formaction="{% url 'file' %}">
                     {% comment %} Назад {% endcomment %}
                     <img
                       src="{% static "svg/codesandbox1819-zhyfd.svg" %}"
