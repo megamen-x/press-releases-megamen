@@ -86,53 +86,16 @@ class RatingView(View):
                 self.context['ans_simple'] = ans_sim
                 self.context['key_words'] = key_words
                 for el in key_words:
-                    rating.keywords_set.create(word=el)
+                    rating.keywords_set.create(construction=el)
                 return render(request, 'main/mmtfilescreen.html', context=self.context)
             else:
-                print(object.output_format)
                 for i in range(len(list_address)):
                     ans_det, ans_sim, key_words = predict_rating(list_address[i])
                     rating = Rating.objects.create(user=request.user, answer_detalized=ans_det, answer_simplified=ans_sim, text=list_address[i])
-                    list_address[i] = '; '.join([ans_det, ans_sim, *key_words]) + "\n"
+                    list_address[i] = '; '.join([ans_det, ans_sim]) + '; ' + str(key_words) + "\n"
                 response = HttpResponse(
                 list_address, content_type=f'application/{object.output_format}')
                 response['Content-Disposition'] = f'attachment; filename="answer.{object.output_format}"'
                 return response
-        else:
-            return render(request, 'main/404.html', context=self.context)
-
-
-class RatingFileView(View):
-    context = {'title': 'Работа с файлами (MMT)'}
-
-    def get(self, request):
-        form_file = RatingForm()
-        self.context['form_file'] = form_file
-        self.context['object'] = None
-        return render(request, 'main/mmtfilescreen.html', context=self.context)
-
-    @method_decorator(login_required)
-    def post(self, request):
-        form_file = RatingForm(request.POST, request.FILES)
-        if form_file.is_valid():
-            input_request = form_file.save(commit=False)
-            input_request.user = request.user
-            input_request.save()
-            output_request = InputFile.objects.filter(
-                user=request.user).latest('id')
-            format_file = output_request.file.path[-3:]
-            match format_file:
-                case 'csv':
-                    list_address = read_csv(output_request.file.path)
-                case 'xls' | 'lsx':
-                    list_address = read_excel(output_request.file.path)
-                case _:
-                    return render(request, 'main/404.html', context=self.context)
-            for i in range(len(list_address)):
-                list_address[i] = predict_rating(list_address[i])
-            response = HttpResponse(
-                list_address, content_type=f'application/{format_file}')
-            response['Content-Disposition'] = f'attachment; filename="answer.{format_file}"'
-            return response
         else:
             return render(request, 'main/404.html', context=self.context)
