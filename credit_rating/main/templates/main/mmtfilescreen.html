@@ -129,12 +129,16 @@
                             <div class="mmtfilescreen-rowresp2">
                               <div class="mmtfilescreen-container3">
                                 <span class="mmtfilescreen-text13">
-                                  ml kat 1
+                                  {% if ans_simple %}
+                                    {% ans_simple %}
+                                  {% endif %}
                                 </span>
                               </div>
                               <div class="mmtfilescreen-container4">
                                 <span class="mmtfilescreen-text116">
-                                  ml kat 2
+                                  {% if ans_simple %}
+                                    {% ans_detailed %}
+                                  {% endif %}
                                 </span>
                               </div>
                             </div>
@@ -159,15 +163,9 @@
                           <div class="mmtfilescreen-respfr2">
                             <div class="mmtfilescreen-rowresp4">
                               <ul class="mmtfilescreen-ul list">
-                                <li class="mmtfilescreen-li list-item">
-                                  <span>Text</span>
-                                </li>
-                                <li class="mmtfilescreen-li1 list-item">
-                                  <span>Text</span>
-                                </li>
-                                <li class="mmtfilescreen-li2 list-item">
-                                  <span>Text</span>
-                                </li>
+                                {% for elem in key_words %}
+                                    <li class="mmtfilescreen-li list-item">{{ elem }}</li>
+                                {% endfor %}
                               </ul>
                             </div>
                           </div>
