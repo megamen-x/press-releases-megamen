@@ -26,9 +26,9 @@ def predict_rating(text: str):
     labse_tokenizer = cache.get('labse_token')
     if labse is None:
         seed_everything(seed=42)
-        print('yes')
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         labse, labse_tokenizer = get_model_by_path('credit_rating\ML\labse_en_ru')
+        # sbert, sbert_tokenizer = get_model_by_path('credit_rating\ML\checkpoint-548')
         cache.set('labse', labse, None)
         cache.set('labse_token', labse_tokenizer, None)
     # Чистка текста
@@ -39,8 +39,16 @@ def predict_rating(text: str):
         tokenizer=labse_tokenizer,
         text_to_predict=clear_text
     )
-    print(labse_label)
-    return ('BBB', 'BBB', ['first', 'second', 'hren znaet chto'])
+    # sbert_label = predict(
+    #     model=sbert,
+    #     tokenizer=sbert_tokenizer,
+    #     text_to_predict=text
+    # )
+    # cls_explainer = MultiLabelClassificationExplainer(labse, labse_tokenizer)
+    # word_attributions = cls_explainer(
+    #     "There were many aspects of the film I liked, but it was frightening and gross in parts. My parents hated it.")
+    # cls_explainer.visualize("multilabel_viz.html")
+    return ('sbert_label', labse_label, ['first', 'second', 'hren znaet chto'])
 
 
 def read_csv(file: str) -> list:

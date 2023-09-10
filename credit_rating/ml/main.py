@@ -7,15 +7,7 @@ from ML.preprocess import preprocess_names, pr_text_editing
 from ML.get_7_class_models import get_model_by_path
 from ML.predict import predict
 
-# from transformers_interpret import MultiLabelClassificationExplainer
-
-def get_text():
-    """
-    Имитирует получение строки от Саши
-    :return:  something
-    """
-    return "random string"
-
+from transformers_interpret import MultiLabelClassificationExplainer
 
 def seed_everything(seed=42):
     random.seed(seed)
@@ -31,7 +23,6 @@ if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # Чистка текста
-    text = get_text()
     clear_text = pr_text_editing(text)
     clear_text = preprocess_names(clear_text)
 
