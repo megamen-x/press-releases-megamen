@@ -56,7 +56,14 @@
 6. Итоговые labels 1 и labels 2
 7. CatBoost
 
-<img src="https://drive.google.com/file/d/1cyn5g2cX5wnOkjB1fOBWeFPXS3HOb61k/view?usp=drive_link">
+### Ход решения
+![Image alt](https://github.com/mireaMegaman/nn_hackaton/blob/main/pics/tech_test6.png)
+
+### Архитектура решения
+![Image alt](https://github.com/mireaMegaman/nn_hackaton/blob/main/pics/arch_test4.png)
+
+### Стек технологий
+![Image alt](https://github.com/mireaMegaman/nn_hackaton/blob/main/pics/dia_test4.png)
 
 <p align="right">(<a href="#readme-top"><i>Вернуться наверх</i></a>)</p>
 
