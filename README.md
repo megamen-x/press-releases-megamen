@@ -72,14 +72,13 @@
 https://hub.docker.com/repository/docker/georgechufff/hacks_ai_spb/
 
 ```
-docker build ...
-docker run ...
+docker run -it --rm -p '8000:8000' georgechufff
+/hacks_ai_nn/latest
 ```
-open smth
 
 <p align="right">(<a href="#readme-top"><i>Вернуться наверх</i></a>)</p>
 
 # Демонстрация работы
-** https://youtu.be/9tO_A9K-VEc **
+https://youtu.be/9tO_A9K-VEc
 
 <p align="right">(<a href="#readme-top"><i>Вернуться наверх</i></a>)</p>
