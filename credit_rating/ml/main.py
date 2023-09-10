@@ -3,11 +3,11 @@ import numpy as np
 import random
 import os
 
-from preprocess import preprocess_names, pr_text_editing
-from get_7_class_models import get_model_by_path
-from predict import predict
+from ML.preprocess import preprocess_names, pr_text_editing
+from ML.get_7_class_models import get_model_by_path
+from ML.predict import predict
 
-from transformers_interpret import MultiLabelClassificationExplainer
+# from transformers_interpret import MultiLabelClassificationExplainer
 
 def get_text():
     """
@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     # ТОЛЬКО МОДЕЛИ НА 7 КЛАССОВ
     # sbert, sbert_tokenizer = get_model_by_path('sbert_nlu_7_class/checkpoint-548')
-    labse, labse_tokenizer = get_model_by_path('labse_en_ru')
+    labse, labse_tokenizer = get_model_by_path(os.join('ML', 'labse_en_ru'))
 
     """sbert_label = predict(
         model=sbert,

@@ -4,32 +4,50 @@ from django.http import HttpResponse
 from django.core.cache import cache
 from main.forms import *
 from main.models import *
+from ML.main import seed_everything
+from ML.preprocess import preprocess_names, pr_text_editing
+from ML.get_7_class_models import get_model_by_path
+from ML.predict import predict
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 import os
 import csv
 import openpyxl
 import numpy as np
-import os
 import warnings
+import torch
 warnings.filterwarnings('ignore')
 
-# model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
-#model_path = os.path.join('credit_rating', 'ML', 'model.pt')
+from transformers_interpret import MultiLabelClassificationExplainer
 
 
 def predict_rating(text: str):
-    # model = cache.get('model')
-    # if model is None:
-    #     model = Model(model_path)
-    #     cache.set('model', model, None)
-    return ('YEEEEEEEEEEES', 'nooooooooooo', ['first', 'second', 'hren znaet chto'])
+    labse = cache.get('labse')
+    labse_tokenizer = cache.get('labse_token')
+    if labse is None:
+        seed_everything(seed=42)
+        print('yes')
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        labse, labse_tokenizer = get_model_by_path('credit_rating\ML\labse_en_ru')
+        cache.set('labse', labse, None)
+        cache.set('labse_token', labse_tokenizer, None)
+    # Чистка текста
+    clear_text = pr_text_editing(text)
+    clear_text = preprocess_names(clear_text)
+    labse_label = predict(
+        model=labse,
+        tokenizer=labse_tokenizer,
+        text_to_predict=clear_text
+    )
+    print(labse_label)
+    return ('BBB', 'BBB', ['first', 'second', 'hren znaet chto'])
 
 
 def read_csv(file: str) -> list:
     with open(file, errors='ignore', mode='r') as f:
         # encoding='cp1251'
         reader = csv.reader(f)
+        next(reader)
         file_content = [''.join(row) for row in reader]
     return file_content
 
@@ -84,7 +102,7 @@ class RatingView(View):
                 rating = Rating.objects.create(user=request.user, answer_detalized=ans_det, answer_simplified=ans_sim, text=list_address[0])
                 self.context['ans_detailed'] = ans_det
                 self.context['ans_simple'] = ans_sim
-                self.context['key_words'] = key_words
+                self.context['key_words'] = None
                 for el in key_words:
                     rating.keywords_set.create(construction=el)
                 return render(request, 'main/mmtfilescreen.html', context=self.context)

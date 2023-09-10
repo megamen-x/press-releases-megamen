@@ -144,32 +144,22 @@
                             </div>
                           </div>
                         </div>
-                        <div class="mmtfilescreen-text1">
-                          <span class="mmtfilescreen-text17">
-                            Визуальное выделение слов:
-                          </span>
-                        </div>
-                        <div class="mmtfilescreen-htmlresp">
-                          <div class="mmtfilescreen-respfr1">
-                            <div class="mmtfilescreen-rowresp3">
-                              <span>'html-page-context'</span>
+                        {% if key_words %}
+                          <div class="mmtfilescreen-text11">
+                            <span class="mmtfilescreen-text19">Ключевые слова:</span>
+                          </div>
+                          <div class="mmtfilescreen-htmlresp1">
+                            <div class="mmtfilescreen-respfr2">
+                              <div class="mmtfilescreen-rowresp4">
+                                <ul class="mmtfilescreen-ul list">
+                                  {% for elem in key_words %}
+                                      <li class="mmtfilescreen-li list-item">{{ elem }}</li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="mmtfilescreen-text11">
-                          <span class="mmtfilescreen-text19">Ключевые слова:</span>
-                        </div>
-                        <div class="mmtfilescreen-htmlresp1">
-                          <div class="mmtfilescreen-respfr2">
-                            <div class="mmtfilescreen-rowresp4">
-                              <ul class="mmtfilescreen-ul list">
-                                {% for elem in key_words %}
-                                    <li class="mmtfilescreen-li list-item">{{ elem }}</li>
-                                {% endfor %}
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+                        {% endif %}
                       </div>
                     </div>
                   </div>
