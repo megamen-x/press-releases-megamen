@@ -69,7 +69,7 @@
 
 # Часть 3. Развертка
 
-https://hub.docker.com/repository/docker/georgechufff/hacks_ai_spb/
+https://hub.docker.com/repository/docker/georgechufff//hacks_ai_nn/latest
 
 ```
 docker run -it --rm -p '8000:8000' georgechufff
