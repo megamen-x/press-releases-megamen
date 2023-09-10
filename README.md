@@ -56,7 +56,7 @@
 6. Итоговые labels 1 и labels 2
 7. CatBoost
 
-![Image alt](https://drive.google.com/file/d/1cyn5g2cX5wnOkjB1fOBWeFPXS3HOb61k/view?usp=drive_link)
+<img src="https://drive.google.com/file/d/1cyn5g2cX5wnOkjB1fOBWeFPXS3HOb61k/view?usp=drive_link">
 
 <p align="right">(<a href="#readme-top"><i>Вернуться наверх</i></a>)</p>
 
