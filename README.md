@@ -78,6 +78,17 @@ docker run -it --rm -p '8000:8000' georgechufff
 
 <p align="right">(<a href="#readme-top"><i>Вернуться наверх</i></a>)</p>
 
+# Часть 4. Награды
+
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/megamen-x/press-releases-megamen/blob/main/pics/NN_Chufistov.png" alt="Image 1" style="width: 23%; height: auto; margin: 0 1%;">
+  <img src="https://github.com/megamen-x/press-releases-megamen/blob/main/pics/NN_Lesha.png" alt="Image 2" style="width: 23%; height: auto; margin: 0 1%;">
+  <img src="https://github.com/megamen-x/press-releases-megamen/blob/main/pics/NN_Sasha.png" alt="Image 3" style="width: 23%; height: auto; margin: 0 1%;">
+  <img src="https://github.com/megamen-x/press-releases-megamen/blob/main/pics/NN_Vlad.png" alt="Image 4" style="width: 23%; height: auto; margin: 0 1%;">
+</div>
+
+<p align="right">(<a href="#readme-top"><i>Вернуться наверх</i></a>)</p>
+
 # Демонстрация работы
 https://youtu.be/9tO_A9K-VEc
 
